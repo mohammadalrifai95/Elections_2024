@@ -1,0 +1,10 @@
+Note1: @PathVariable converted to @RequestParam as method in controller used to be called more than once
+Note2: added library to use sec:authorize in jsp
+Note3:First of all you need to specify Aspose Cloud Maven Repository configuration / location in your Maven pom.xml as below
+
+
+Spring 3 - Accessing messages.properties in jsp**** STARTS
+use <spring:message code = "${model.error}" />
+where taglib is imported as
+<%@ taglib prefix = "spring" uri = "http://www.springframework.org/tags" %>
+Spring 3 - Accessing messages.properties in jsp**** ENDS
