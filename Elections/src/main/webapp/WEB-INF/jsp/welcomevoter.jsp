@@ -122,32 +122,9 @@ li a:hover:not(.active) {
 
 </style>
 <body>
-
-<!-- <ul style="width: 220px;">    -->
-<!-- 	<li><a class="active" href="/home2">Home</a></li> -->
-<!-- 	<li><a href="/candidateinformation?viewName=home2" id="selectCityLi">How to become a Candidate</a></li> -->
-<!-- 	<li><a href="/candidacyconditions">Add New Candidate</a></li> -->
-<!-- 	<li><a href="/contactUs">Candidate/Voter</a></li> -->
-<!-- 	<li><a href="/news">News</a></li> -->
-<!-- 	<!--Note2-->
-
-<%-- 	<c:if test="${role == 'ROLE_ADMIN'}"> --%>
-<!--         <li><a href="/admin">Admin</a></li>  -->
-<%--     </c:if> --%>
-<%-- 	<c:if test="${role == 'ROLE_ADMIN'}"> --%>
-<!--         <li><a href="/callBusinessApp">Call Business App</a></li>  -->
-<%--     </c:if> --%>
-<!-- </ul> -->
-
-<!-- <header class="fixedElement"  style="background-color: #679FAB; width:100%;  color:black; height: 12%;">    -->
-<!-- 		<p style="margin-top: 5px;"></p>   -->
-<%-- 	 	<span style=""><h4>Welcome Voter: </h4> ${voterData.fullName}</span>     --%>
-<!-- 	 	<span style="margin-left: 450px; font-size: 25px; font-weight: bold;">Hello Election Application</span>    -->
-<!-- 	 	<a href="/logoutPage" style="margin-left: 1100px; ">Logout</a>  -->
-<!-- </header> -->
-
-<div dir="rtl" class="fixedElement"  style="border: 3px solid #73AD21; background-color: #679FAB; width: 70%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; height: 100px; color: white;" >  
-	<table style="">            
+<div dir="rtl" style="border: 3px solid #73AD21; background-color: #679FAB; width: 70%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; color: white;">
+  
+	<table style="width: 100%" >            
 		<tr>
 			<td style="width:20%;">
 			<c:choose>
@@ -163,22 +140,14 @@ li a:hover:not(.active) {
 								<span>Welcome Candidate:<br> ${candidateData.fullName}</span>   
 							</p>
 			    		</c:when>    
-			</c:choose>
+					</c:choose>
 			    </c:otherwise>
 			</c:choose>
-<%-- 			<c:choose> --%>
-<%-- 			    <c:when test="${not empty candidateData.fullName}"> --%>
-<!-- 					<p style=" margin-top: 1px;"> -->
-<%-- 						<span>Welcome Candidate:<br> ${candidateData.fullName}</span>    --%>
-<!-- 					</p> -->
-<%-- 			    </c:when>     --%>
-<%-- 			</c:choose> --%>
-
 			</td>
-			<td style="width: 15%">
+			<td style="width: 10%">
 			</td>
 			<td style="width: 50%; font-size: 28px;">        
-					<p >الانتخابات النيابية الأردنية 2024</p>   
+				<p style="margin-left: 5%;">الانتخابات النيابية الأردنية 2024</p>   
 			</td>
 			<td style="width: 10%">
 			</td>   
@@ -188,12 +157,10 @@ li a:hover:not(.active) {
 		</tr>
 	</table>
 </div>
-<!--    padding-top: 50px; -->
-<!-- <div style="width: 1300px; height:3000px;  margin-left: 20px; margin-top: 90px; background-color: lightgray ; "> -->
-<div dir="rtl" style="width: 70%; margin-top: 5px; padding-top:4%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; background-color: lightgray">               
 
-<table  style="width: 100%; margin-top: 5%; padding-top: 5%">
-    
+<div dir="rtl" style="width: 70%; margin-top: 0.05%; padding-top:4%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; background-color: lightgray; border: 3px solid lightgray;" >
+               
+<table>
 	<tr>
 		<td>
 			<input type="text" style="display:none;" id="voterId" value="${voterData.id}" />
@@ -202,8 +169,6 @@ li a:hover:not(.active) {
 	</tr>
 	<tr>
 		<td>
-<!-- 			<label style="font-size: 20px; font-weight: bold; margin-left: 400px;">Voter Details Screen</label> -->
-<!-- 			<label style="font-size: 20px; font-weight: bold; margin-left: 500px;">شاشة تفاصيل الناخبين</label> -->
 		</td>
 	</tr>
 	<tr>
@@ -255,7 +220,7 @@ li a:hover:not(.active) {
 				<tr>
 <!-- 					<td style="width: 250px;">Click this link to see all Candidates in your region: </td>  -->
 					 <td >انقر فوق هذا الرابط لرؤية جميع المرشحين في منطقتك: </td>
-					 <td ><a href="/SeeListOfCandidates?userName=${userData.userName}&password=${userData.password}">قائمة المرشحين</a></td>
+					 <td ><a href="/SeeListOfCandidates?userName=${userData.userName}&password=${userData.password}&ssn=${userData.ssn}">قائمة المرشحين</a></td>
 <%-- 					 <td style=" "><a href="/SeeListOfCandidates?userName=${userData.userName}&password=${userData.password}">See List of Candidates </a></td> --%>
 				</tr>			
 				<tr>
@@ -277,7 +242,7 @@ li a:hover:not(.active) {
 <!-- 				    	</td> -->
 				    	<td>
 				    		أنت لم تصوت لأي مرشح حتى الآن.<br> 
-				    		الرجاء الضغط هنا <a href="/SeeListOfCandidates?userName=${userData.userName}&password=${userData.password}">تصويت الان</a> 
+				    		الرجاء الضغط هنا <a href="/SeeListOfCandidates?userName=${userData.userName}&password=${userData.password}&ssn=${userData.ssn}">تصويت الان</a> 
 							للقيام بعمليه التصويت
 				    	</td>
 				    </tr>
@@ -378,92 +343,22 @@ li a:hover:not(.active) {
 				
 						
 			</table>
-<!-- 			<label style="font-size: 20px; font-weight: bold; margin-left: 70px;">All Candidates in you region(English)</label>   -->
-<!-- 			<table style="width: 80%; border-collapse: separate;border-spacing: 0 1em;">    -->
-<!-- 			<table style="width: 100%; border-collapse: separate;border-spacing: 0 1em;">    -->
-<%-- 				<c:forEach items="${candidateDataList}" var="candidateData"> --%>
-<!-- 				    <tr >  -->
-<!-- 				      <td style="border: solid;"> -->
-<%-- <%-- 				      <c:out value="${candidateData.englishFullName}" /> --%>  
-<!-- 					      <table> -->
-<!-- 						      	<tr> -->
-<!-- 						      		<td style="width: 500px;">   -->
-<!-- <!-- 						      			<span style="margin-right: 300px;">  -->  
-<%-- 						      				<c:out value="${candidateData.englishFullName}"/> --%>
-<!-- <!-- 						      			</span> --> 
-<!-- 						      		</td> -->
-<!-- 						      	</tr> -->
-<!-- 						      	<tr> -->
-<!-- 						      		<td>  -->
-<%--    								      	<button class="styled"  type="submit"  id="voteId" value="${candidateData.id}" style="width: 40px; height: 30px; float:right; background-color:  #00008B; cursor: pointer; background-color: black; color: white; align : center; margin-right: 150px;" onclick="voteToCandidateFun(${candidateData.id}) "> --%>
-<!-- 								      		Vote -->
-<!-- 								      	</button> -->
-<!-- 						      		</td> -->
-<!-- 						      	</tr> -->
-<!-- 					      </table> -->
-<!-- <!-- 				      style="margin-right: 100px; "   -->  
-<!-- 				      	</td> -->
-<!-- 				      	<td style="border: solid;"> -->
-<%-- 				      	<img src="<c:url value="/resources/images/candidateDefault.png" />" alt="image"  style="width:182px; height: 50px; "/>  --%>
-<!-- 				      	</td> -->
-<!-- 				      	<td> -->
-<%-- <%-- 				      	<button class="styled"  type="submit"  id="voteId" value="${candidateData.id}" style="width: 40px; height: 30px; float:right; background-color:  #00008B; cursor: pointer; background-color: black; color: white;" onclick="voteToCandidateFun(${candidateData.id})"> --%>
-<!-- <!-- 				      		Vote --> 
-<!-- <!-- 				      	</button> -->
-<!-- 				      </td>  -->
-<!-- 				    </tr> -->
-<%-- 			  </c:forEach> --%>
-<!-- 			</table> -->
 		</td>
-		<!--Table1 -->
 
 </tr>
-		
-		<!--Table3 -->
-<!-- 	<tr> -->
-<!-- 		<!--Table1 -->
-<!-- 		<td> -->
-<!-- 			<label style="font-size: 20px; font-weight: bold; margin-left: 100px;">Voter Details(Arabic)</label>  -->
-<!-- 			<table style="width: 80%; border-collapse: separate;border-spacing: 0 1em;">  -->
-<!-- 				<tr> -->
-<!-- 					<td>Arabic full name</td>   -->
-<%-- 					<td>${voterData.fullName}</td>  --%>
-<!-- 				</tr> -->
-<!-- 				<tr> -->
-<!-- 					<td>Governorate Arabic Name</td>     -->
-<%-- 					<td>${governorateData.arabicName}</td>   --%>
-<!-- 				</tr> -->
-<!-- 				<tr> -->
-<!-- 					<td>Constituency Arabic Name</td>     -->
-<%-- 					<td>${constituencyData.arabicName}</td>   --%>
-<!-- 				</tr> -->
-<!-- 				<tr> -->
-<!-- 					<td >You have voted to this Candidate: </td>     -->
-<%-- 					<td style="background: red">${candidateData.fullName}</td>   --%>
-<!-- 				</tr> -->
-<!-- 				<tr> -->
-<!-- 					<td></td> -->
-<!-- 				</tr>  -->
-<!-- 			</table>	 -->
-<!-- 		</td> -->
-<!-- 				<td> -->
-<!-- 			<label style="font-size: 20px; font-weight: bold; margin-left: 70px;">All Candidates in you region(Arabic)</label>   -->
-<!-- 			<table style="width: 80%; border-collapse: separate;border-spacing: 0 1em;">    -->
-<%-- 				<c:forEach items="${candidateDataList}" var="candidateData"> --%>
-<!-- 				    <tr>  -->
-<%-- 				      <td style="border: solid;"><c:out value="${candidateData.fullName}" />  --%>
-<!-- 				      	<span style="margin-left: 100px; "></span>  -->
-<%-- 				      	<button class="styled"  type="submit"  id="voteId" value="${candidateData.id}" style="width: 40px; height: 30px; float:right; background-color:  #00008B; cursor: pointer; background-color: black; color: white;" onclick="voteToCandidateFun(${candidateData.id})"> --%>
-<!-- 				      		Vote -->
-<!-- 				      	</button> -->
-<!-- 				      </td>  -->
-<!-- 				    </tr> -->
-<%-- 			  </c:forEach> --%>
-<!-- 			</table> -->
-<!-- 		</td> -->
-<!-- 	</tr> -->
+
+
 </table>
 
+
+			<div >
+				<c:forEach begin="0" end="50" varStatus="loop">
+				<br class="verticalSpace">
+				</c:forEach>	
+				</div>
+   
+				<a href="#"  >__________________________________________________________________________________________________________________________</a>
+			</div>
 
 </div>
 
@@ -481,6 +376,13 @@ li a:hover:not(.active) {
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript">
 
+window.onload = function() {
+	
+alert("مرحبا بك في شاشه تفاصيل الناخبين الرجاء العلم انه عند التصويت للمرشح فانه سوف يتم اظهار اسمك للمرشح لمده لا تقل عن ثلاثه ايام ثم يتم اخفائه بعد ذلك");
+
+// 	alert("اهلا بكم في موقع الانتخابات البرلمانيه الاردنيه هذا الموقع بمثابه حمله انتخابيه للتسهيل على المواطنين الذين يرغبون بالترشح لمجلس النواب الاردني 2024 لتاسيس حملتهم بجهد اقل ومصاريف اقل على هذا الموقع يمكنك هذا الموقع من معرفه عدد الاصوات التي يمكن ان تحصيدها بدقه هذا الموقع محمي ويحتوي على جميع المواطنين الاردنيين المؤهلين للترشح والمؤهلين للانتخاب فقط كل حسب منطقته التي يقطن بها ولا يسمح هذا الموقع لاي شخص بان يسجل نفسه كناخب او كمرشح في منطقه اخرى غير المنطقه التي يقطن بها اي مواطن اردني تنطبق عليه شروط الترشح والانتخاب له الاحقيه الكامله في الدخول الى هذا الموقع وتسجيل نفسه كمرشح لجلب الاصوات او كناخب للتصويت للمرشح للمرغوب به يسمح هذا الموقع في اي وقت يمكنك النقر على اشعار اليد مع العلم العوده الى الصفحه الرئيسيه يسمح لك هذا الموقع باختيار والتصويت لمرشحك المفضل الذي ترغب للتصويت له اذا لم يكن مرشحك مسجل في هذا الموقع خرج الى ما هو بضروره التسجيل في هذا الموقع كمرشح للبرلمان الاردني يمكنه هذا الموقع من مراقبه حملته الانتخابيه واعطائه رؤيه افضل عن عدد الاصوات التي يمكن ان يحصدها عن طريق هذا التسجيل في هذا الموقع الرجاء المعرفه ان هذا الموقع لا يعتبر موقعا رسميا ويمثل فقط حمله انتخابيه للتسهيل على المواطنين ولا يمثل اي انتخابات رسميه هذا الموقع ينبغي على الاشخاص الذين قاموا بالتسجيل في هذا الموقع ان يذهبوا ايضا للتسجيل والانتخاب الفعلي في الزمان والمكان التي عينتهما الحكومه الاردنيه الرجاء المعرفه طريقه التسجيل كنافذ او مرشح اردني انقر على تسجيل ناخب او مرشح التي تظهر في الشاشه الرئيسيه ثم اختر نوع التسجيل في اي وقت يمكن يمكنك النقر على قائمه المرشحين التي تظهر في الشاشه الرئيسيه ومن ثم اختيار المدينه والمنطقه التي ترغب في رؤيه قائمه مرشحيها عند النقر على الزر اوكي فانك توافق على جميع الشروط وسياسه هذا الموقع لمشاركه معلوماتك مع هذا الموقع بغرض مساعدتك في التسجيل كناخب او مرشح بعد عمليه تسجيلكناخب او كمرشح يمكنك تسجيل الدخول عن طريق النقر على الرابط او الزر تسجيل الذي يظهر على الشاشه الرئيسيه عند الوصول الى شاشه تسجيل الدخول بامكانك ادخال اسم المستخدم وكلمه المرور التي قمت بادخالهما اثناء عمليه التسجيل كناخب او مرشح بالاضافه الى رقمك الوطني باللغه الانجليزيه كما يظهر على الهويه في اي وقت يمكنك الضغط على الزر معلومات او الرابط الذي يظهر على الشاشه الرئيسيه لرؤيه هذه القائمه مره اخرى");
+}
+
 function voteToCandidateFun(id){ 
 	
 // 	alert(id);  
@@ -492,7 +394,8 @@ function cancelCandidateFun(id){
 // 	window.location.href = '/cancelCandidate?candidateId='+id+'&voterId='+voterId;
 	
 	
-    var result = confirm("Are you sure you want to cancel your candidate selection.");
+//var result = confirm("Are you sure you want to cancel your candidate selection.");
+    var result = confirm("هل أنت متأكد أنك تريد إلغاء اختيار المرشح الخاص بك؟");
     if (result == true) {
 		setTimeout(function() {
 			alert("You have succefully canceled you selection,you will be forwarded to new screen, please sign in to see new update to your profile");

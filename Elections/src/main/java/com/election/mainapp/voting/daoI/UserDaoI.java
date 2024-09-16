@@ -1,5 +1,7 @@
 package com.election.mainapp.voting.daoI;
 
+import java.util.List;
+
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -13,7 +15,7 @@ public interface UserDaoI  extends JpaRepository<UserData, Integer>{
 	UserData findByUserNameAndPassword(String userName, String password );
 
 	@Query("from UserData  where userName = ?1 and password = ?2 and ssn = ?3")
-	UserData findByUserNameAndPasswordAndSsn(String userName, String password , Long ssn);
+	List<UserData> findByUserNameAndPasswordAndSsn(String userName, String password , Long ssn);
 
 	
 	

@@ -102,107 +102,117 @@ li a:hover:not(.active) {
 <!--   <h3 >Welcome to the Election System app - this is the login page</h3> -->
  
 <!-- </div> -->
-<div  class="fixedElement"  style="border: 3px solid #73AD21; background-color: #679FAB; width: 100%; height: 100px; color: white;" >  
-	<table style="margin-left: 100px;">            
+<!-- <div  class="fixedElement"  style="border: 3px solid #73AD21; background-color: #679FAB; width: 100%; height: 100px; color: white;" > -->
+<div    style="border: 3px solid #73AD21; background-color: #679FAB;  height: 10%; color: white;             width: 70%;   margin-right:5%; margin-left:5%;" dir="rtl">  
+<!-- <div style="width: 1100px; height: 1250px; position: relative; margin-left: auto; margin-right: auto;"> -->
+		<table > 
 		<tr>
-			<td>            
-				<p style=" margin-top: 1px;">  
-					<a href="/">   
-				  		<img src="<c:url value="/resources/images/jordanflagonhand.jpg" />" alt="image" class="circular_image_header"   style="width: 100px; height: 100px; "/>
-					</a>
-				</p>
-			</td>
-			<td style="width: 50px;">
-			</td>
-			<td style="width: 500px;">        
-				<h2 style=" margin-top: 10px;">   
-					Election of Jordan  
-				</h2>
-			</td>
-			<td style="width: 350px;">
-			</td>   
 			<td>  
-				<h5 style=" margin-top: 40px;">  
-					<a href="/logoutPage">Log in/Sign up</a>   
-				</h5>  
+				<a href="/">
+			  		<img src="<c:url value="/resources/images/jordanflagonhand.jpg" />" alt="image"   style="width: 100px; height: 90px; border-radius: 25%; "/> 
+				</a>
 			</td>
+			<td style="width: 20%"></td>
+			<td style="width:50%; text-align: center;">             
+					<p style="font-size: 35px;"> ÊØÈíŞ ÇáÇäÊÎÇÈÇÊ ÇáÈÑáãÇäíÉ ÇáÃÑÏäíÉ </p>
+					<br>
+					<p style="font-size: 25px;"> ãÚáæãÇÊ Úä ÇáãæŞÚ </p>
+			</td>
+			<td style="width: 20%"></td>
+			<td style="font-size: 45px; width:50%; text-align: center;">    
+					<a href="/logoutPage">
+						ÊÓÌíá 						
+					</a>
+					<a href="/english?language=english" style="color: #FF6347; font-size: 15px;"> 
+					  	 English 
+					</a>     
+			</td>	
 		</tr>
 	</table>
 </div>
+	
 
 
 
-
-<div id="parantDiv" style="margin-left: 50px; margin-top: 50px;"> 
+<!-- <div    style="background-color: lightgray;  height: 30%; font-size: 23px; width: 100%;" >  -->
+<!-- <div  id="englishDiv" style=" background-color: lightgray; padding-top: 150px;"> -->
+<div    style="border: 3px solid #73AD21; background-color: #679FAB;  height: 10%; color: white;             width: 70%;   margin-right:5%; margin-left:5%;" dir="rtl">
 <div>
+<h1>
+ÇåáÇ Èßã İí ãæŞÚ ÇáÇäÊÎÇÈÇÊ ÇáÈÑáãÇäíå ÇáÇÑÏäíå åĞÇ ÇáãæŞÚ ÈãËÇÈå Íãáå ÇäÊÎÇÈíå ááÊÓåíá Úáì ÇáãæÇØäíä ÇáĞíä íÑÛÈæä ÈÇáÊÑÔÍ áãÌáÓ ÇáäæÇÈ ÇáÇÑÏäí 2024 áÊÇÓíÓ ÍãáÊåã ÈÌåÏ ÇŞá æãÕÇÑíİ ÇŞá Úáì åĞÇ ÇáãæŞÚ
+	 <br> 
+	 <br> 
+ íãßä åĞÇ ÇáãæŞÚ ÇáãÑÔÍ  ãä ãÚÑİå ÚÏÏ ÇáÇÕæÇÊ ÇáÊí íãßä Çä íÍÕá ÚáíåÇ ÈÏŞå åĞÇ ÇáãæŞÚ ãÍãí æíÍÊæí Úáì ÌãíÚ ÇáãæÇØäíä ÇáÇÑÏäííä ÇáãÄåáíä ááÊÑÔÍ æÇáãÄåáíä ááÇäÊÎÇÈ İŞØ ßá ÍÓÈ ãäØŞÊå ÇáÊí íŞØä ÈåÇ æáÇ íÓãÍ åĞÇ ÇáãæŞÚ áÇí ÔÎÕ ÈÇä íÓÌá äİÓå ßäÇÎÈ Çæ ßãÑÔÍ İí ãäØŞå ÇÎÑì ÛíÑ ÇáãäØŞå ÇáÊí íŞØä ÈåÇ
+ 	 <br> 
+	 <br>
+  Çí ãæÇØä ÇÑÏäí ÊäØÈŞ Úáíå ÔÑæØ ÇáÊÑÔÍ æÇáÇäÊÎÇÈ áå ÇáÇÍŞíå ÇáßÇãáå İí ÇáÏÎæá Çáì åĞÇ ÇáãæŞÚ æÊÓÌíá äİÓå ßãÑÔÍ áÌáÈ ÇáÇÕæÇÊ Çæ ßäÇÎÈ ááÊÕæíÊ ááãÑÔÍ ááãÑÛæÈ Èå  İí Çí æŞÊ íãßäß ÇáäŞÑ Úáì ÇÔÚÇÑ ÇáíÏ ãÚ ÇáÚáã ÇáÚæÏå Çáì ÇáÕİÍå ÇáÑÆíÓíå íÓãÍ áß åĞÇ ÇáãæŞÚ ÈÇÎÊíÇÑ æÇáÊÕæíÊ áãÑÔÍß ÇáãİÖá ÇáĞí ÊÑÛÈ ááÊÕæíÊ áå ÇĞÇ áã íßä ãÑÔÍß ãÓÌá İí åĞÇ ÇáãæŞÚ ÎÑÌ Çáì ãÇ åæ ÈÖÑæÑå ÇáÊÓÌíá İí åĞÇ ÇáãæŞÚ ßãÑÔÍ ááÈÑáãÇä ÇáÇÑÏäí íãßäå åĞÇ ÇáãæŞÚ ãä ãÑÇŞÈå ÍãáÊå ÇáÇäÊÎÇÈíå æÇÚØÇÆå ÑÄíå ÇİÖá Úä ÚÏÏ ÇáÇÕæÇÊ ÇáÊí íãßä Çä íÍÕÏåÇ Úä ØÑíŞ åĞÇ ÇáÊÓÌíá İí åĞÇ ÇáãæŞÚ ÇáÑÌÇÁ ÇáãÚÑİå Çä åĞÇ ÇáãæŞÚ áÇ íÚÊÈÑ ãæŞÚÇ ÑÓãíÇ æíãËá İŞØ Íãáå ÇäÊÎÇÈíå ááÊÓåíá Úáì ÇáãæÇØäíä æáÇ íãËá Çí ÇäÊÎÇÈÇÊ ÑÓãíå åĞÇ ÇáãæŞÚ íäÈÛí Úáì ÇáÇÔÎÇÕ ÇáĞíä ŞÇãæÇ ÈÇáÊÓÌíá İí åĞÇ ÇáãæŞÚ Çä íĞåÈæÇ ÇíÖÇ ááÊÓÌíá æÇáÇäÊÎÇÈ ÇáİÚáí İí ÇáÒãÇä æÇáãßÇä ÇáÊí ÚíäÊåãÇ ÇáÍßæãå ÇáÇÑÏäíå ÇáÑÌÇÁ ÇáãÚÑİå ØÑíŞå ÇáÊÓÌíá ßäÇİĞ Çæ ãÑÔÍ ÇÑÏäí ÇäŞÑ Úáì ÊÓÌíá äÇÎÈ Çæ ãÑÔÍ ÇáÊí ÊÙåÑ İí ÇáÔÇÔå ÇáÑÆíÓíå Ëã ÇÎÊÑ äæÚ ÇáÊÓÌíá İí Çí æŞÊ íãßä íãßäß ÇáäŞÑ Úáì ŞÇÆãå ÇáãÑÔÍíä ÇáÊí ÊÙåÑ İí ÇáÔÇÔå ÇáÑÆíÓíå æãä Ëã ÇÎÊíÇÑ ÇáãÏíäå æÇáãäØŞå ÇáÊí ÊÑÛÈ İí ÑÄíå ŞÇÆãå ãÑÔÍíåÇ ÚäÏ ÇáäŞÑ Úáì ÇáÒÑ Çæßí İÇäß ÊæÇİŞ Úáì ÌãíÚ ÇáÔÑæØ æÓíÇÓå åĞÇ ÇáãæŞÚ áãÔÇÑßå ãÚáæãÇÊß ãÚ åĞÇ ÇáãæŞÚ ÈÛÑÖ ãÓÇÚÏÊß İí ÇáÊÓÌíá ßäÇÎÈ Çæ ãÑÔÍ ÈÚÏ Úãáíå ÊÓÌíáßäÇÎÈ Çæ ßãÑÔÍ íãßäß ÊÓÌíá ÇáÏÎæá Úä ØÑíŞ ÇáäŞÑ Úáì ÇáÑÇÈØ Çæ ÇáÒÑ ÊÓÌíá ÇáĞí íÙåÑ Úáì ÇáÔÇÔå ÇáÑÆíÓíå ÚäÏ ÇáæÕæá Çáì ÔÇÔå ÊÓÌíá ÇáÏÎæá ÈÇãßÇäß ÇÏÎÇá ÇÓã ÇáãÓÊÎÏã æßáãå ÇáãÑæÑ ÇáÊí ŞãÊ ÈÇÏÎÇáåãÇ ÇËäÇÁ Úãáíå ÇáÊÓÌíá ßäÇÎÈ Çæ ãÑÔÍ ÈÇáÇÖÇİå Çáì ÑŞãß ÇáæØäí ÈÇááÛå ÇáÇäÌáíÒíå ßãÇ íÙåÑ Úáì Çáåæíå İí Çí æŞÊ íãßäß ÇáÖÛØ Úáì ÇáÒÑ ãÚáæãÇÊ Çæ ÇáÑÇÈØ ÇáĞí íÙåÑ Úáì ÇáÔÇÔå ÇáÑÆíÓíå áÑÄíå åĞå ÇáŞÇÆãå ãÑå ÇÎÑì
+</h1>
 <!-- 				• • = alt key + 0149 -->
 
- 					<h1>About The Application</h1>   
- 					<br>
-<p style="font-size: 23px;"> 
-Election of Jordan country application has been launched in order to simplify the parliament election to Jordanian people,<br> 
-application allows any Jordanian nationality who's eligible and has satisfied all parliament conditions to be parliament candidate.<br> 
-All what they have to do is to sing up to this application with all information needed and then the application will tell if this person <br>
-is eligible to be a candidate.<br>
+<!--  					<h1>About The Application</h1>    -->
+<!--  					<br> -->
+<!-- <p style="font-size: 23px;">  -->
+<!-- Election of Jordan country application has been launched in order to simplify the parliament election to Jordanian people,<br>  -->
+<!-- application allows any Jordanian nationality who's eligible and has satisfied all parliament conditions to be parliament candidate.<br>  -->
+<!-- All what they have to do is to sing up to this application with all information needed and then the application will tell if this person <br> -->
+<!-- is eligible to be a candidate.<br> -->
 
 
-<br>
-<br>
-Currently Election of Jordan country application is filtering voters name and social security numbers,<br>
-number of voters which currently register in the application around 5 millions records, <br>
-any one outside of theses records try to register themselves as voter, application will reject that <br>
-and will pop up a message on the screen stating:  "The name you entered is not registered in 2023, <br>
-to be able to vote from now to any candidate preparing for 2024, please register your name at Jordan Independent Election Commission before you register in this application" ,<br>
+<!-- <br> -->
+<!-- <br> -->
+<!-- Currently Election of Jordan country application is filtering voters name and social security numbers,<br> -->
+<!-- number of voters which currently register in the application around 5 millions records, <br> -->
+<!-- any one outside of theses records try to register themselves as voter, application will reject that <br> -->
+<!-- and will pop up a message on the screen stating:  "The name you entered is not registered in 2023, <br> -->
+<!-- to be able to vote from now to any candidate preparing for 2024, please register your name at Jordan Independent Election Commission before you register in this application" ,<br> -->
 
-<br>
-<br> 
-these names are currently registered on The Jordanian Independent Authority, 
-and they are published online in Arabic language, we allow any candidate to see all<br>
-voters available in his/her region by clicking on link provided on the screen.<br><br>
+<!-- <br> -->
+<!-- <br>  -->
+<!-- these names are currently registered on The Jordanian Independent Authority,  -->
+<!-- and they are published online in Arabic language, we allow any candidate to see all<br> -->
+<!-- voters available in his/her region by clicking on link provided on the screen.<br><br> -->
 
-Application also will allow candidates to see all current representative was elected in 18th Parliament of Jordan. 
+<!-- Application also will allow candidates to see all current representative was elected in 18th Parliament of Jordan.  -->
 
-<br>
-<br>
-Application will allow more people to register as candidates and monitor voting status on a daily/weekly basis before they<br>
-become actual government candidates.<br> 
-It also will save candidates time and reduce the number of campaigns, so that the people's voice is better represented.
-Application launched and tested in country of Jordan, we are targeting to grow it into large scale application. 
-It targeted to increase the percentage of votes from 30% in 2020 to at least 75% to 95%.
+<!-- <br> -->
+<!-- <br> -->
+<!-- Application will allow more people to register as candidates and monitor voting status on a daily/weekly basis before they<br> -->
+<!-- become actual government candidates.<br>  -->
+<!-- It also will save candidates time and reduce the number of campaigns, so that the people's voice is better represented. -->
+<!-- Application launched and tested in country of Jordan, we are targeting to grow it into large scale application.  -->
+<!-- It targeted to increase the percentage of votes from 30% in 2020 to at least 75% to 95%. -->
  
-<br>
-<br>
-We have reserved a database in order to have more space to any voters want to registers, voters will not be charged any fees and it will be totaly free for them
-, once they sign up with Username and password
-they will be able any time to login again and change their votes before the deadline in 2024, once pass the dead line, 
-the voters will not be able to vote to different candidate.
-<br>
-<br>
-We also have different tables in our database in order to save candidate's information, Application is targeting the candidate by 
-allow them to pay registration fees in monthly basis to be able to register and monitor the results "number of votes" currently gained,
-candidate will also be able to see all voters in his/her region and also will be able to see all voters names who voted to him/her.
+<!-- <br> -->
+<!-- <br> -->
+<!-- We have reserved a database in order to have more space to any voters want to registers, voters will not be charged any fees and it will be totaly free for them -->
+<!-- , once they sign up with Username and password -->
+<!-- they will be able any time to login again and change their votes before the deadline in 2024, once pass the dead line,  -->
+<!-- the voters will not be able to vote to different candidate. -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- We also have different tables in our database in order to save candidate's information, Application is targeting the candidate by  -->
+<!-- allow them to pay registration fees in monthly basis to be able to register and monitor the results "number of votes" currently gained, -->
+<!-- candidate will also be able to see all voters in his/her region and also will be able to see all voters names who voted to him/her. -->
 
-<br>
-<br>
-Dividing the Kingdom into 18 electoral districts The Kingdom was divided into 18 local electoral districts <br>
-and a general electoral district, to which 138 seats were allocated,<br> 
-with 97 seats for the local districts and 41 seats for the general district, so that the capital, Amman,<br> 
-was divided into three local electoral districts, and Irbid Governorate into two local districts, while the rest were<br> 
-allocated to each of them. 
+<!-- <br> -->
+<!-- <br> -->
+<!-- Dividing the Kingdom into 18 electoral districts The Kingdom was divided into 18 local electoral districts <br> -->
+<!-- and a general electoral district, to which 138 seats were allocated,<br>  -->
+<!-- with 97 seats for the local districts and 41 seats for the general district, so that the capital, Amman,<br>  -->
+<!-- was divided into three local electoral districts, and Irbid Governorate into two local districts, while the rest were<br>  -->
+<!-- allocated to each of them.  -->
 
-<br>
-<br>
-The governorates have one local district, in addition to allocating three districts for the Bedouins of the north,<br> 
-center, and south, each district having three seats.
+<!-- <br> -->
+<!-- <br> -->
+<!-- The governorates have one local district, in addition to allocating three districts for the Bedouins of the north,<br>  -->
+<!-- center, and south, each district having three seats. -->
     <br>   
     <br>   
     <br>   
     <br>   
     <div style="background-color: lightgray"> 
 <h1>References</h1> 
- "| ãÌáÓ ÇáäæÇÈ ÇáÇÑÏäí". 2020-01-27. Archived from the original on 2020-01-27. Retrieved 2022-01-23.
- "ÅÑÇÏÉ ãáßíÉ ÈÍá ãÌáÓ ÇáäæÇÈ". ÑÄíÇ ÇáÃÎÈÇÑí (in Arabic). Retrieved 2022-01-23.
- "| ãÌáÓ ÇáäæÇÈ ÇáÇÑÏäí". 2020-02-27. Archived from the original on 2020-02-27. Retrieved 2022-01-23.
+
  </div>
  
 </p>

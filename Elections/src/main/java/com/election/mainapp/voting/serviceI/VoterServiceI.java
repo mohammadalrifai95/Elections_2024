@@ -24,4 +24,6 @@ public interface VoterServiceI {
 	
 	public Optional<VoterData> findBySsn(Integer ssn);
 	
+	public Optional<VoterData> findBySsn(Long ssn);
+	
 }

@@ -78,6 +78,37 @@ public class CandidateService implements CandidateServiceI{
 		
 		return countOfVotes;
 	}
+	
+	@Override
+	public Optional<CandidateData> findBySsn(Long ssn) {
+
+		String ssnStr =  Long.toString(ssn);
+//		Optional<CandidateData> candidateData = (Optional<CandidateData>)candidateDao.findBySsn(ssn);
+		
+//		if(!candidateData.isPresent()) {
+		Optional<CandidateData> candidateData = (Optional<CandidateData>)candidateDao.findBySsn(ssnStr);
+//		}
+		
+		return candidateData;
+
+	}
+	
+	
+	@Override
+	public Optional<CandidateData> findFullName(String fullName, Long governorateId, Long constituencyId) {
+		
+		Optional<CandidateData> candidateData = null;
+//		Integer  governorateIdInt =  governorateId.intValue();
+		Integer  constituencyIdInt =  constituencyId.intValue();
+		try {
+			
+			candidateData = (Optional<CandidateData>)candidateDao.fullName(fullName, governorateId , constituencyIdInt);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return candidateData; 
+	}
 		
 
 

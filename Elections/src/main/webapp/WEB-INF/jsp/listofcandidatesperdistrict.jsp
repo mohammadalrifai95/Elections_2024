@@ -153,7 +153,7 @@
 
 function voteToCandidateFun(id){
 	var voterId= document.getElementById('voterId').value;
-            var result = confirm("Are you sure you want to vote to this candidate.");
+            var result = confirm("هل أنت متأكد أنك تريد التصويت لهذا المرشح؟");
             if (result == true) {
         		setTimeout(function() {
         			alert("You have succefully voted, you will be forwarded to new screen,\nPlease sign in to see new update to your profile");

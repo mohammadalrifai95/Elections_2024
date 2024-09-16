@@ -112,5 +112,22 @@ public class VoterService implements VoterServiceI{
 		return voterData; 
 	}
 
+	@Override
+	public Optional<VoterData> findBySsn(Long ssn) {
+
+		String ssnStr =  Long.toString(ssn);
+		Optional<VoterData> voterData = (Optional<VoterData>)vDao.findBySsn(ssn);
+		
+//		if(!voterData.isPresent()) {
+//			voterData = (Optional<VoterData>)vDao.findBySsn(ssnStr);
+//		}
+		
+		return voterData;
+
+	}
+
+	
+	
+	
 
 }

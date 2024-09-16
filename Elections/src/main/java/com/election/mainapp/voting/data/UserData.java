@@ -51,6 +51,9 @@ public class UserData implements Serializable{
 	@Column(name = "id", nullable = false, columnDefinition = "int default 1")  
 	 private Integer id;
 	
+	@Transient
+	private Boolean isUniqueRequrd;
+	
 	//GenericDateAndTimeData genericDateAndTimeData;
 
 	private String fullName;
@@ -86,6 +89,9 @@ public class UserData implements Serializable{
      @Transient
      private String  type;
 
+     @Transient
+     private String  isItCandidateOrVoter;
+     
 
 	
 
@@ -129,6 +135,7 @@ public class UserData implements Serializable{
 
 	public UserData() {
 		
+		isUniqueRequrd = false;
 		genericDateAndTimeData = new GenericDateAndTimeData(); 
 		
 	}

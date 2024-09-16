@@ -112,8 +112,13 @@ public class CandidateData implements Serializable{
 	
 	//IMAGE BY PHONE CAMERA WAS 1048576 bytes
 	//How to pass variable as long text:  @Column(columnDefinition="TEXT")
-    @Column(name = "image_data", length = 2000000)    
+//    @Lob
+//    @Column(name = "image_data", columnDefinition = "longblob")
+//    @Column(name = "image_data", columnDefinition = "text")
     //@NotNull: error received 'must not be null'
+	
+	 @Column(name = "image_data", columnDefinition = "longblob")
+//	@Column(name = "image_data", length = 2000000)  
     private byte[] imageData;
     
     @Transient

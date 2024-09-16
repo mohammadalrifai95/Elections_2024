@@ -9,7 +9,7 @@
 <head>
 <meta charset="windows-1256">
 <title>Insert title here</title>
-
+</head>
 <style type="text/css">
 
 ul {
@@ -68,11 +68,12 @@ li a:hover:not(.active) {
 
 
 </style>
-</head>
+
 
 <body>
-<div dir="rtl" class="fixedElement"  style="border: 3px solid #73AD21; background-color: #679FAB; width: 70%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; height: 100px; color: white;" >  
-	<table style="">            
+<div dir="rtl" style="border: 3px solid #73AD21; background-color: #679FAB; width: 70%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; color: white;">
+
+	<table style="width: 100%" >            
 		<tr>
 			<td style="width:20%;">
 			<c:choose>
@@ -94,7 +95,7 @@ li a:hover:not(.active) {
 			<td style="width: 10%">
 			</td>
 			<td style="width: 50%; font-size: 28px;">        
-					<p style="margin-left: 120px;">الانتخابات النيابية الأردنية 2024</p>   
+					<p >الانتخابات النيابية الأردنية 2024</p>   
 			</td>
 			<td style="width: 10%">
 			</td>   
@@ -104,86 +105,46 @@ li a:hover:not(.active) {
 		</tr>
 	</table>
 </div>
- 
-<!-- <div  class="fixedElement"  style="border: 3px solid #73AD21; background-color: #679FAB; width: 100%; height: 100px; color: white;" >   -->
-<!-- 	<table style="margin-left: 100px;">             -->
-<!-- 		<tr> -->
-<!-- 			<td>             -->
-<!-- 				<p style=" margin-top: 1px;">   -->
-<!-- 					<a href="/">    -->
-<%-- 				  		<img src="<c:url value="/resources/images/jordanflagonhand.jpg" />" alt="image" class="circular_image_header"   style="width: 100px; height: 100px; "/> --%>
-<!-- 					</a> -->
-<!-- 				</p> -->
-<!-- 			</td> -->
-<!-- 			<td style="width: 50px;"> -->
-<!-- 			</td> -->
-<!-- 			<td style="width: 500px;">         -->
-<!-- 				<h2 style=" margin-top: 10px;">    -->
-<!-- 					Election of Jordan   -->
-<!-- 				</h2> -->
-<!-- 			</td> -->
-<!-- 			<td style="width: 250px;"> -->
-<!-- 			</td>    -->
-<!-- 			<td>   -->
-<!-- 					<a href="/logoutPage">Logout</a>    -->
-<!-- 			</td> -->
-<!-- 		</tr> -->
-<!-- 	</table> -->
-<!-- </div> -->
 
-
-<div dir="rtl" style="width: 70%; margin-top: 5px; padding-top:20px; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; background-color: lightgray">            
+<div dir="rtl" style="width: 70%; margin-top: 0.05%; padding-top:4%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; background-color: lightgray; border: 3px solid lightgray;" >            
 <table>
 <tr>
 <td>
-<!-- <label style="font-size: 20px; font-weight: bold; margin-left: 400px; ">List of candidate Screen<br><br>  -->
 <label style="font-size: 20px; font-weight: bold; margin-left: 400px; ">قائمه المرشحين للانتخابات البرلمانيه الاردنيه</label>    <br><br>
 <label style="font-size: 20px; font-weight: bold; margin-left: 400px; ">${governorateData.arabicName}</label><br><br>
 <label style="font-size: 20px; font-weight: bold; margin-left: 400px; ">${constituencyData.arabicName}</label><br><br>
 </td></tr></table>
 
-<%-- <span style="background-color: lightgray">${candidateData.fullName}</span> are [${numberOfVotes}] as in below table: --%>
-
-<!-- 			<table style="width: 60%; border-collapse: separate;border-spacing: 0 1em;">    -->
 <input type="text" style="display:none;" id="voterId" value="${voterData.id}" />
 <table  style="width: 70%;">    
-				<tr style="font-size: 20px;">
-					<td>يمكنك الضغط على اسم المرشح الانتخابي للتصويت</td>
+				<tr style="font-size: 23px; font-weight: bold;">
+					<td>يمكنك الضغط على اسم المرشح الانتخابي ادناه للتصويت</td>
 					<td><p style="width: 160px;">الصورة الشخصية<p></td> 
 					<td><p style="width: 150px;">مجموع الأصوات<p></td> 
 					<c:choose>
 			    		<c:when test="${not empty voterData.fullName}">
-<!-- 							<td><p style="width: 200px;">Click vote button to vote<p></td> -->
-								<td><p style="width: 200px;">انقر على زر التصويت للتصويت<p></td>
+								<td><p style="width: 200px;"> يمكنك ايضا الضغط على الزر التصويت الاسود ادناه للتصويت<p></td>
 			    		</c:when>    
 					</c:choose>
 					 
 				</tr>
 				<c:forEach items="${candidateDataList}" var="candidateData">
-				    <tr > 
+				    <tr style="font-size: 20x; font-weight: bold;"> 
 				      <td style="border: solid;">
 					      <table style="font-size: 16px;">
 						      	<tr>
-						      		<td style="width: 500px; height: 60px; text-align: center;">    
-<%-- 				      					<c:out value="${candidateData.englishFullName}"/> --%>
-										<%-- onclick="voteToCandidateFun(${candidateData.id})" --%>
+						      		<td style="width: 100px; height: 60px; text-align: center;">    
 	      					 			<c:choose>
 										    <c:when test="${not empty voterData.fullName}">
-													<button style=" width: 370px; height:120px; font-size: 16px;" id="candidateEnglishFullNameId" value="${candidateData.id}" onclick="voteToCandidateFun(${candidateData.id})"><span id="cndidteEngFulNmeId">${candidateData.fullName}</span></button>  
+													<button style=" width: 180px; height:120px; font-size: 16px;" id="candidateEnglishFullNameId" value="${candidateData.id}" onclick="voteToCandidateFun(${candidateData.id})"><span id="cndidteEngFulNmeId">${candidateData.fullName}</span></button>  
 										    </c:when>    
 											<c:otherwise>
-													<button style=" width: 370px; height:120px; font-size: 16px;" id="candidateEnglishFullNameId" value="${candidateData.id}"><span id="cndidteEngFulNmeId">${candidateData.fullName}</span></button>
+													<button style=" width: 180px; height:120px; font-size: 16px;" id="candidateEnglishFullNameId" value="${candidateData.id}"><span id="cndidteEngFulNmeId">${candidateData.fullName}</span></button>
 										  	</c:otherwise>
 										</c:choose>
 						      		</td>
 						      	</tr>
 						      	<tr>
-<!-- 						      		<td style="text-align: center; width: 60px; color: red;"> -->
-<!-- 						      		_______________________________________   -->
-<%--    								     <button class="styled"  type="submit"  id="voteId" value="${candidateData.id}" style="width: 60px; height: 40px; float:right; background-color:  #00008B; cursor: pointer; background-color: black; color: white; align : center; margin-right: 150px;" onclick="voteToCandidateFun(${candidateData.id}) "> --%>
-<!-- 								      		Vote -->
-<!-- 								      	</button> -->
-<!-- 						      		</td> -->
 						      	</tr>
 					      </table>
 				      	</td>
@@ -215,34 +176,46 @@ li a:hover:not(.active) {
 			  </c:forEach>
 			</table>
  
+ 
+  <c:forEach begin="0" end="3" varStatus="loop">
+	<br class="verticalSpace">
+</c:forEach>
 
 	<div id="loginDiv" style="margin-top: 50px;">
 		<form action="signin" method = "GET">    
 			 <input class="input" type="text" name="userName"  id="userName" value="${userData.userName}" style="display:none;" /> 
 			 <input class="input" type="password" name="password"  id="password" value="${userData.password}" style="display:none;"/> 
-			 <input type="submit" value="Back" id="Login" name="Login" class="button" style="width: 55px; height: 30px; font-size: 16px;">  
+			 <input type="submit" value="الصفحة السابقة" id="Login" name="Login" class="button" style="width: 250px; height: 80px; font-size: 33px; font-weight: bold;">  
 		</form>
 		<br class="verticalSpace">
 	</div>		
 
+ <c:forEach begin="0" end="50" varStatus="loop">
+	<br class="verticalSpace">
+</c:forEach>
 </div>
 
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript">
-
+window.onload = function() {
+	
+alert("ملاحظه: اذا لم يظهر لك اي اسم مرشح في هذه الصفحه بعد، هذا يعني انه لم يقم احد بتسجيل كمرشح نيابي في هذه المنطقه الرجاء اخبار المرشحين بضروره التسجيل ومن ثم سيظهر في هذه الصفحه ويمكنك انتخابه");
+	
+}
 function voteToCandidateFun(id){
 	var voterId= document.getElementById('voterId').value;
-            var result = confirm("Are you sure you want to vote to this candidate.");
+            var result = confirm("هل أنت متأكد أنك تريد التصويت لهذا المرشح؟");
             if (result == true) {
         		setTimeout(function() {
-        			alert("You have succefully voted, you will be forwarded to new screen,\nPlease sign in to see new update to your profile");
+//         			alert("You have succefully voted, you will be forwarded to new screen,\nPlease sign in to see new update to your profile");
+        			alert("لقد قمت بالتصويت بنجاح، سيتم إعادة توجيهك إلى شاشة جديدة،\nيرجى تسجيل الدخول لرؤية التحديث الجديد لملفك الشخصي");
         			window.location.href = '/voteToCandidate?candidateId='+id+'&voterId='+voterId;
         			}, 1500);
             } else {
             }
 }
-
+ 
 
 function cancelCandidateFun(id){ 
 	

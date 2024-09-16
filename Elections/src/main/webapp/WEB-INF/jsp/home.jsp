@@ -326,11 +326,11 @@ nav{
 .submenu {
 	position: absolute;
 	background-color: #2c3e50;
-	width: 140px;
+/* 	width: 200px; */
 	left: 0;
 	display: none;
 /* 	changehere  */
-	width: 300px; 
+	width: 450px; 
 }
 
 
@@ -341,12 +341,11 @@ nav{
 .submenu2 {
 	position: absolute;
 /* 	left: 100%; */
-	width: 140px;
 	top: 0;
 	background-color: #2c3e50;
 	display: none;
 	/* 	changehere  */
-	width: 320px;  
+	width: 450px;  
     right: 100%;
     left: auto;
     
@@ -429,14 +428,95 @@ nav{
 }
 
 
+/* .alert { */
+/*    width:1000px;     */
+/* } */
 
+#confirm
+         {
+            overflow: scroll;
+            display: none;
+            background-color: white; 
+/*             background-color: white; */
+            color: #000000;
+            border: 10px solid #aaa;
+            position: fixed;
+            width: 80%;
+            height: 75%;
+            font-size: 31px;
+            font-weight:bold;
+/*             left: 20%;  */
+/*             margin-left: -100px; */
+/*             padding: 10% 10% 10%;  */
+            box-sizing: border-box;
+            text-align: center;
+	         margin-top: 32%;
+             margin-right: 5%; 
+             margin-left: 4%; 
+            
+         }
+         #confirm button {
+            background-color: blue;
+            color: white;
+            display: inline-block;
+            border-radius: 12px;
+            border: 4px solid #aaa;
+/*             padding: 5px; */
+            text-align: center;
+            width: 100px;
+            height: 70px;
+            font-size: 27px;
+            font-weight:bold;
+            cursor: pointer;
+         }
+         #confirm .message
+         {
+/*             text-align: left; */
+
+         }
+         
+         
 </style>
 <body>
 
 
-<div  class="center">
+<div style="" class="center">
 
-<div    style="border: 3px solid #73AD21; background-color: #679FAB;  height: 100px; color: white;" dir="rtl">  
+
+<div id="confirm" style="">
+      <button class="yes" style="font-size: 40px;">موافق</button>
+<!--          <div class = "message">اهلا بكم في موقع الانتخابات البرلمانيه الاردنيه هذا الموقع بمثابه حمله انتخابيه للتسهيل على المواطنين الذين يرغبون بالترشح لمجلس النواب الاردني 2024 لتاسيس حملتهم بجهد اقل ومصاريف اقل على هذا الموقع يمكنك هذا الموقع من معرفه عدد الاصوات التي يمكن ان تحصيدها بدقه هذا الموقع محمي ويحتوي على جميع المواطنين الاردنيين المؤهلين للترشح والمؤهلين للانتخاب فقط كل حسب منطقته التي يقطن بها ولا يسمح هذا الموقع لاي شخص بان يسجل نفسه كناخب او كمرشح في منطقه اخرى غير المنطقه التي يقطن بها اي مواطن اردني تنطبق عليه شروط الترشح والانتخاب له الاحقيه الكامله في الدخول الى هذا الموقع وتسجيل نفسه كمرشح لجلب الاصوات او كناخب للتصويت للمرشح للمرغوب به يسمح هذا الموقع في اي وقت يمكنك النقر على اشعار اليد مع العلم العوده الى الصفحه الرئيسيه يسمح لك هذا الموقع باختيار والتصويت لمرشحك المفضل الذي ترغب للتصويت له اذا لم يكن مرشحك مسجل في هذا الموقع خرج الى ما هو بضروره التسجيل في هذا الموقع كمرشح للبرلمان الاردني يمكنه هذا الموقع من مراقبه حملته الانتخابيه واعطائه رؤيه افضل عن عدد الاصوات التي يمكن ان يحصدها عن طريق هذا التسجيل في هذا الموقع الرجاء المعرفه ان هذا الموقع لا يعتبر موقعا رسميا ويمثل فقط حمله انتخابيه للتسهيل على المواطنين ولا يمثل اي انتخابات رسميه هذا الموقع ينبغي على الاشخاص الذين قاموا بالتسجيل في هذا الموقع ان يذهبوا ايضا للتسجيل والانتخاب الفعلي في الزمان والمكان التي عينتهما الحكومه الاردنيه الرجاء المعرفه طريقه التسجيل كنافذ او مرشح اردني انقر على تسجيل ناخب او مرشح التي تظهر في الشاشه الرئيسيه ثم اختر نوع التسجيل في اي وقت يمكن يمكنك النقر على قائمه المرشحين التي تظهر في الشاشه الرئيسيه ومن ثم اختيار المدينه والمنطقه التي ترغب في رؤيه قائمه مرشحيها عند النقر على الزر اوكي فانك توافق على جميع الشروط وسياسه هذا الموقع لمشاركه معلوماتك مع هذا الموقع بغرض مساعدتك في التسجيل كناخب او مرشح بعد عمليه تسجيلكناخب او كمرشح يمكنك تسجيل الدخول عن طريق النقر على الرابط او الزر تسجيل الذي يظهر على الشاشه الرئيسيه عند الوصول الى شاشه تسجيل الدخول بامكانك ادخال اسم المستخدم وكلمه المرور التي قمت بادخالهما اثناء عمليه التسجيل كناخب او مرشح بالاضافه الى رقمك الوطني باللغه الانجليزيه كما يظهر على الهويه في اي وقت يمكنك الضغط على الزر معلومات او الرابط الذي يظهر على الشاشه الرئيسيه لرؤيه هذه القائمه مره اخرى</div><br> -->
+<!--          <div class = "message" dir="rtl">اهلا بكم</div> -->
+         <div class = "message" >اهلا بكم, بامكانك التسجيل كناخب او مرشح للبرلمان الاردني , من الشاشه الرئيسيه اضغط على زر      <span style="color: red"> &#9660 تسجيل ناخب/مرشح </span>
+         اختر تسجيل ناخب او تسجيل مرشح ادناه
+         <br>
+<!-- 	         		<ul style="font-size: 40px; background-color: yellow;" >  -->
+<!-- 	         			<li> -->
+	         				<a href="/voterRegistration" style="font-size: 40px; background-color: yellow;">تسجيل ناخب اردني</a>
+<!-- 	         			</li>  -->
+<!--          			</ul> -->
+         			<br>
+<!--          			<ul style="font-size: 40px; background-color: yellow;" > -->
+<!-- 	         			<li> -->
+	         				<a href="/welcome" style="font-size: 40px; background-color: yellow;">تسجيل مرشح  اردني</a>
+<!-- 	         			</li> -->
+<!-- 	         		</ul>  -->
+         <br>
+         ,سيطلب منك الموقع ادخال اسمك ورقمك الوطني كما يظهران في الهويه الشخصيه  سيطلب منك الموقع ادخال "اسم مستخدم" و "رقم سري" يمكنانك من الدخول لاتمام عمليه التصويت,  بعد اتمام عمليه التسجيل كناخب او مرشح بامكانك الان تسجيل الدخول بالنقر على رابط<a href="/logoutPage" style="font-size: 40px; background-color: yellow;"> تسجيل </a> الذي يظهر في الشاشه الرئيسيه من الزاويه العليا في اليسار ومن ثم الدخول عن طريق اسم المستخدم وكلمه المرور, لمزيد من <a href="/abouttheapplication" style="font-size: 40px; background-color: yellow;"> معلومات</a> بامكانك الضغط على زر معلومات الذي يظهر على الشاشه الرئيسيه,  
+          للعوده الى الصفحه الرئيسيه في اي وقت بامكانك النقر على شعار اليد في الزاويه العليا  من جهه اليمين
+<!--          <br> -->
+    			<a href="/" style="float: left;">
+			  		<img src="<c:url value="/resources/images/jordanflagonhand.jpg" />" alt="image"   style="width: 90px; height: 90px; border-radius: 25%; "/> 
+				</a>
+         </div>
+<!--          <br> -->
+         <button class="yes" style="font-size: 40px;">OK</button>
+      </div>
+      
+      
+
+
+<div    style="border: 3px solid #73AD21; background-color: #679FAB;  height: 10%; color: white;" dir="rtl">  
 	<table > 
 		<tr>
 			<td>  
@@ -446,14 +526,17 @@ nav{
 			</td>
 			<td style="width: 20%"></td>
 			<td style="width:50%; text-align: center;">             
-					<p style="font-size: 25px;"> تطبيق الانتخابات البرلمانية الأردنية </p>
+					<p style="font-size: 35px;">حملتك للانتخابات البرلمانيه الاردنيه</p>
 					<br>
-					<p> هذا الموقع غير رسمي </p>
+					<p style="font-size: 25px;"> هذا الموقع غير رسمي ويعتبر حمله للمرشحين </p>
 			</td>
 			<td style="width: 20%"></td>
-			<td style="font-size: 24px; width:50%; text-align: center;">    
+			<td style="font-size: 45px; width:50%; text-align: center;">    
 					<a href="/logoutPage">
 						تسجيل 						
+					</a>
+					<a href="/english?language=english" style="color: #FF6347; font-size: 15px;"> 
+					  	 English 
 					</a>     
 			</td>	
 		</tr>
@@ -461,57 +544,11 @@ nav{
 </div>
 
 
-<!-- background-color: #679FAB; -->
-<!-- <div style="border:1px solid gray; width: 100%; height:70px; background-color: white">         -->
-<!--  background-color: white;  -->
-<!-- class="fixedElement" -->
-<div    style="background-color: lightgray;  height: 50px;" >
-		<h4>
-				<ul class="menu">  		
-					<!--background-color:  #00008B; --> 
-				<li >  
-					<a href="/english?language=english" style="color: #FF6347;"> 
-					  	 English 
-					</a>
-				 </li>
-				  
-				  <button id="searchButtonId" type="submit" style="width: 20px; height: 30px; background-color:black;  " onclick="searchFunction()"><i class="fa fa-search" style="color: white; "></i></button>					
-				  <input id="textId" type="text" placeholder="..يبحث" name="search2" style="height: 30px; width: 150px;" dir="rtl">
-
- 					<li style="float:right;	">     
-						<a href="#">
-						&#9660 معلومات عنا
-						</a>
-						<ul class="submenu">
-							<li >
-								<a href="/abouttheapplication">
-									معلومات حول التطبيق
-								</a>
-							</li> 
-						</ul>
-					 </li>
-					
-					<li style="float:right;">
-						<a href="#">&#9660 الدوائر الانتخابية   </a>
-						<ul class="submenu">
-							<li>
-								<a href="/electoralDistricts">
-									الدوائر الانتخابية الجديدة 
-								</a>
-							</li>
-						</ul>
-					</li>
-																			 
-					<li style="float:right;"><a href="#">&#9660 مجلس النواب الاردني   </a>
-						<ul class="submenu">
-							<li><a href="/ListOfMembers">
-							قائمه اسماء النواب الحاليين 
-							</a></li>
-						</ul>
-					</li>
-																								 
+<div    style="background-color: lightgray;  height: 30%; font-size: 23px; width: 100%;" > 
+		<h1>
+				<ul class="menu" style="width: 100%;">  		
 					 
-					<li style="float:right;">
+					 <li style="float:right;">
 						<a href="#">&#9660 قائمه المرشحين  </a>
 						<ul class="submenu" >
 							<li >
@@ -548,56 +585,50 @@ nav{
 					
 						</ul>
 					</li>
+
+					<li style="float:right;">
+						<a href="#">&#9660 تسجيل ناخب/مرشح</a>
+						<ul class="submenu">
+							<li><a href="/voterRegistration">تسجيل ناخب اردني</a></li>
+							<li><a href="/welcome">تسجيل مرشح  اردني</a></li>
+						</ul>
+					</li>				
+
 				</ul>
-		</h4>
+		</h1>
 </div>			
 
-<!-- background-color: lightgray; -->
-<!-- background-color: #FFFFF9; -->
-<%--background-image:url(<c:url value='/resources/images/jordanMap.png' />) --%>
-<div  id="englishDiv" style=" background-color: lightgray; padding-top: 1px;">        
+<div  id="englishDiv" style=" background-color: lightgray; padding-top: 150px;">        
 <span id="errorLoginMessage" style="color:red;">${errorLoginMessage}</span>
-  
-<%-- background-image:url(<c:url value='/resources/images/jordanMap2.jpg' />)   --%>
-  <div style="border:1px solid gray; width: 100%; padding-top: 1px;" >
+
+  <div style="border:1px solid gray; width: 100%; padding-top: 1%;" >
 	<c:forEach items="${candidateDataList}" var="candidateData">
-		<div style="padding-left: 250px; display:none;" id="${candidateData.index}" >
-<%-- 		${candidateData.index}  --%>
-<!-- 			<table style="width: 100%;  padding-bottom: 50px;"> -->
-<!-- 				<tr> -->
-<!-- 					<td> -->
-<!-- 						<label style="font-size: 25px; font-weight: bold; margin-left: 400px;"> -->
-<!-- 							تفاصيل المرشح -->
-<!-- 						</label> -->
-<!-- 					</td> -->
-<!-- 				</tr> -->
-<!-- 			</table> -->
-			<table style="width: 20px;">
+		<div style="padding-left: 6%; display:none; border: solid; border-color: #FF6347; background-color: #358579; color: white;" id="${candidateData.index}" >
+
+			<table style="">
 				<tr>
-					<td></td>
+				<td style="width: 25%; font-size: 35px;"></td>
+					<td style="font-size: 35px; color: #FF6347;">بعض المرشحين المسجلين في الموقع</td>
 				</tr>
 			</table>
-			<!-- width: 1100px;  -->
   			<table style="text-align: center" id="${column.status.index}">
 				<tr>
-					<td>
-						<table style="border-collapse: separate;border-spacing: 0 1em; width: 400px; ">
+					<td >
+						<table style="border-collapse: separate;border-spacing: 0 1em; width: 100%; ">
 							<tr>
-								<td>
-									<a href="/SeeListOfVoters?userName=${candidateData.userData.userName}&password=${candidateData.userData.password}" style="font-size: 20px; margin-left: 1px;">
-									<button style="font-size: 30px;  background-color: blue;color: white; width: 50px; height:50px; margin-left: 10px;" >${candidateData.numberOfVotes}</button>
+								<td width="100%">
+									<button style="font-size: 30px;  background-color: blue;color: white; width: 28%; height:40%; margin-left: 1%;" >${candidateData.numberOfVotes}</button>
 									مجموع الأصوات
-									</a> 
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<c:choose>
 									    <c:when test="${empty candidateData.base64image}">
-									    	<img src="<c:url value="/resources/images/candidateDefault.png" />" alt="image"  style="width: 300px; height: 300px;"/>
+									    	<img src="<c:url value="/resources/images/candidateDefault.png" />" alt="image"  style="width: 55%; height: 55%;"/>
 									    </c:when>    
 									    <c:otherwise>
-									    	<img alt="img" src="data:image/png;jpg;jpeg;charset=utf-8;base64,${candidateData.base64image}" style="width: 300px; height: 300px;"/>
+									    	<img alt="img" src="data:image/png;jpg;jpeg;charset=utf-8;base64,${candidateData.base64image}" style="width: 55%; height: 55%;"/>
 									    </c:otherwise>
 									</c:choose>
 								</td>
@@ -607,8 +638,12 @@ nav{
 							</tr>
 						</table>
 					</td>
-					<td> 
-						<table style="margin-top: -200px; padding-top: 1px; padding-right: 200px; font-size: 25px;">
+					
+					<td style="width: 1%;">
+					</td>
+					
+					<td style="width: 60%;"> 
+						<table style=" padding-top: 1px; padding-right: 5%; font-size: 25px; border-spacing: 20px;">
 							<tr>
 								<td>${candidateData.fullName}</td>
 								<td>:اسم  المرشح</td>  
@@ -627,125 +662,123 @@ nav{
 		      </table>
 	      </div>
 	 </c:forEach>
-		      
-<!--  		 <h3 style="margin-left: 50px; padding-top: 90px;" >Welcome to Jordan Election Application </h3> -->
-<!-- 		<table style="  color: #00008B; padding-left: 400px;" >      -->
-<!-- 			<tr > -->
-<!--  				style="display:none;" -->
-<!-- 				<td class="imageContainer" >  -->
-<!-- 					<a href="#">  -->
-<%-- 						<c:choose> --%>
-<%-- 						    <c:when test="${empty candidateData.base64image}"> --%>
-<%-- 						    	<img src="<c:url value="/resources/images/candidateDefault.png" />" alt="image"  style="width: 300px; height: 300px;"/> --%>
-<%-- 						    </c:when>     --%>
-<%-- 						    <c:otherwise> --%>
-<%-- 						    	<img alt="img" src="data:image/png;jpg;jpeg;charset=utf-8;base64,${candidateData.base64image}" style="width: 300px; height: 300px;"/> --%>
-<%-- 						    </c:otherwise> --%>
-<%-- 						</c:choose>  --%>
-<!-- 					</a>	 -->
-<!-- 				</td> -->
-<!-- 			</tr> -->
-<!-- 		</table> -->
-
 	</div>
 		
 		
 		
+<div    style="background-color: lightgray;  height: 30%; font-size: 22px; width: 100%;" > 
+<h1>
+	
+	 <div style="float:left">
+            <a href="/ListOfMembers"> مجلس النواب   </a>
+    </div>
+    <div style="float: right">
+            <a href="/abouttheapplication"> معلومات</a>
+    </div>
+	
+</h1>
+</div>			
+<br>
+<br>
+<br>
 		
 		
-		
-		
-		<div style="border:1px solid gray; width: 100%;" >
+<div style="border:1px solid gray; width: 100%;" align="center" >
 		<!--   table1    -->
 		<table style="  color: #00008B;" >     
 			<tr>
  				<!--style="display:none;" -->
 				<td class="imageContainer" id="developedbId" > 
 					<a href="#"> 
-						<p style="margin-left: 80px; font-size: 70px; color: green;">
-						<img src="<c:url value="/resources/images/modrinization.png" />" alt="image"  style="width:80%; height: 386px; "/> 
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: green;"> -->
+						<img src="<c:url value="/resources/images/modrinization.png" />" alt="image"  style="width:100%; "/> 
+<!-- 						</p> -->
 					</a>	
 				</td>
 				<td class="imageContainer" id="2017Td"  style="display:none;">
 					<a href="#"> 
-						<p style="margin-left: 80px; font-size: 70px; color: green;">
-						<img src="<c:url value="/resources/images/jordan-vote-concept-man-hand-ballot-box-election-day-jordan-flag-vector.jpg" />" alt="image"  style="width:80%; height: 386px; " /> 
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: green;"> -->
+						<img src="<c:url value="/resources/images/jordan-vote-concept-man-hand-ballot-box-election-day-jordan-flag-vector.jpg" />" alt="image"  style="width:100%; " /> 
+<!-- 						</p> -->
 					</a>	
 				</td>
 				<td class="imageContainer" id="2018Td"  style="display:none;">
 					<a href="#">
-						<p style="margin-left: 80px; font-size: 70px; color: blue;">
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: blue;"> -->
 <!-- 						jordainainvoteforthenation.jpg -->
-						<img src="<c:url value="/resources/images/femaleCandidate.png" />" alt="image" style="width:80%; height: 386px; "/> 
-						</p>	
+						<img src="<c:url value="/resources/images/femaleCandidate.png" />" alt="image" style="width:100%;  "/> 
+<!-- 						</p>	 -->
 					</a>
 					 		
 				</td>
 				<td  class="imageContainer" id="2019Td"  style="display:none;">
 					<a href="#">
-						<p style="margin-left: 80px; font-size: 70px; color: red">
-							<img src="<c:url value="/resources/images/jordanammanwithflag.jpg" />" alt="image"   style="width:80%; height: 371px; " />
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: red"> -->
+<%-- 							<img src="<c:url value="/resources/images/jordanammanwithflag.jpg" />" alt="image"   style="width:100%;  " /> --%>
+							<img src="<c:url value="/resources/images/drop_cast.png" />" alt="image"   style="width:100%;  " />
+<!-- 						</p> -->
 					</a>
 				</td>
 				<td  class="imageContainer" id="2020Td"  style="display:none;">
 					<a href="#">
-						<p style="margin-left: 80px; font-size: 70px; color: yellow">
-						<img src="<c:url value="/resources/images/kingAbdullahSpeech.jpg" />" alt="image"  style="width:80%; height: 370px; "  />
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: yellow"> -->
+						<img src="<c:url value="/resources/images/kingAbdullahSpeech.jpg" />" alt="image"  style="width:100%;  "  />
 <!-- 						</p> -->
-						</p>
+<!-- 						</p> -->
 					</a>
 				</td>
 				 
 				<td  class="imageContainer" id="2021Td"  style="display:none;">
 					<a href="#">
-						<p style="margin-left: 80px; font-size: 70px; color: brown;">
-							<img src="<c:url value="/resources/images/jordanparlamiante.jpg" />" alt="image"  style="width:80%; height: 380px; "  />
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: brown;"> -->
+							<img src="<c:url value="/resources/images/jordanparlamiante.jpg" />" alt="image"  style="width:100%;  "  />
+<!-- 						</p> -->
 					</a>
 				</td>
 				<td  class="imageContainer" id="2022Td"  style="display:none;">
 					<a href="#">
-						<p style="margin-left: 80px; font-size: 70px; color: orange;">
-						<img src="<c:url value="/resources/images/jordanflagonhand.jpg" />" alt="image"   style="width:80%; height: 400px; " />
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: orange;"> -->
+						<img src="<c:url value="/resources/images/jordanflagonhand.jpg" />" alt="image"   style="width:100%;  " />
+<!-- 						</p> -->
 					</a>
 				</td>
 				<td  class="imageContainer" id="2023Td"  style="display:none;">
 					<a href="#">
-						<p style="margin-left: 80px; font-size: 70px; color: black;">
-						<img src="<c:url value="/resources/images/jordanmap.jpg" />" alt="image" style="width:80%; height: 400px; "    />
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: black;"> -->
+<%-- 						<img src="<c:url value="/resources/images/jordanmap.jpg" />" alt="image" style="width:80%; height: 400px; "    /> --%>
+						<img src="<c:url value="/resources/images/Jordan_flags.jpg" />" alt="image" style="width:100%; "    />
+<!-- 						</p> -->
 					</a>
 				</td>
 				<td  class="imageContainer" id="2024Td"  style="display:none;">
 					<a href="#">
-						<p style="margin-left: 80px; font-size: 70px; color: black;">
-						<img src="<c:url value="/resources/images/jordanonthemap.jpg" />" alt="image" style="width:80%; height: 400px; "    />
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: black;"> -->
+<%-- 						<img src="<c:url value="/resources/images/jordanonthemap.jpg" />" alt="image" style="width:80%; height: 400px; "    /> --%>
+						<img src="<c:url value="/resources/images/crowd.png" />" alt="image" style="width:100%; "    />
+<!-- 						</p> -->
 					</a>
 				</td>
 				<td  class="imageContainer" id="2025Td"  style="display:none;">
 					<a href="#">
-						<p style="margin-left: 80px; font-size: 70px; color: black;">
-						<img src="<c:url value="/resources/images/jordanonthemap2.jpg" />" alt="image" style="width:80%; height: 400px; "    />
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: black;"> -->
+<%-- 						<img src="<c:url value="/resources/images/jordanonthemap2.jpg" />" alt="image" style="width:80%; height: 400px; "    /> --%>
+						<img src="<c:url value="/resources/images/JORDAN-People.jpg" />" alt="image" style="width:100%;  "    />
+<!-- 						</p> -->
 					</a>
 				</td>
 				<td  class="imageContainer" id="2026Td"  style="display:none;">
 					<a href="#">
-						<p style="margin-left: 80px; font-size: 70px; color: black;">
-						<img src="<c:url value="/resources/images/JORDAN-ELECTION-PARLIAMENT-RESULTS.jpg" />" alt="image" style="width:80%; height: 400px; "    />
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: black;"> -->
+						<img src="<c:url value="/resources/images/JORDAN-ELECTION-PARLIAMENT-RESULTS.jpg" />" alt="image" style="width:100%;  "    />
+<!-- 						</p> -->
 					</a>
 				</td>
 				<td  class="imageContainer" id="2027Td"  style="display:none;">
 					<a href="#">
-						<p style="margin-left: 80px; font-size: 70px; color: black;">
-							<img src="<c:url value="/resources/images/developedby.jpg" />" alt="image" style="width:80%; height: 386px;" />
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: black;"> -->
+<%-- 							<img src="<c:url value="/resources/images/developedby.jpg" />" alt="image" style="width:80%; height: 386px;" /> --%>
+							<img src="<c:url value="/resources/images/drop_cast.png" />" alt="image" style="width:100%; " />
+<!-- 						</p> -->
 					</a>
 				</td>
 				 
@@ -754,75 +787,104 @@ nav{
 </div>
 
 
-  <div style="border:1px solid gray; width: 100%;" >
+ <div style="border:1px solid gray; width: 100%;" align="center" >
   	<br /> 
-		<table style="  color: #00008B;" >     
-			<tr>
-				<td class="imageContainer" id=""> 
+<!-- 		<table style="  color: #00008B;" >      -->
+<!-- 			<tr> -->
+<!-- 				<td class="imageContainer" id="">  -->
 					<a href="#"> 
-						<p style="margin-left: 80px; font-size: 70px; color: green;">
-						<img src="<c:url value="/resources/images/rules.png" />" alt="image"  style="width:80%; height: 290px; "/> 
-						</p>
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: green;"> -->
+							<img src="<c:url value="/resources/images/rules.png" />" alt="image"  style="width:100%;  "/> 
+<!-- 						</p> -->
 					</a>	
-				</td>
-			</tr>
-		</table>
-		<table style="  color: #00008B;" >     
-			<tr>
-				<td class="imageContainer" id=""> 
-					<a href="#"> 
-						<p style="margin-left: 80px; font-size: 70px; color: green;">
-						<img src="<c:url value="/resources/images/fourMembersNames.png" />" alt="image"  style="width:80%; height: 353px; "/> 
-						</p>
-					</a>	
-				</td>
-			</tr>
-		</table>
+<!-- 				</td> -->
+<!-- 			</tr> -->
+<!-- 		</table> -->
+<br /> <br /> 
+<!-- 		<table style="  color: #00008B;" >      -->
+<!-- 			<tr> -->
+<!-- 				<td class="imageContainer" id="">  -->
+<!-- 					<a href="#">  -->
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: green;"> -->
+<%-- 						<img src="<c:url value="/resources/images/fourMembersNames.png" />" alt="image"  style="width:80%; height: 353px; "/>  --%>
+<!-- 						</p> -->
+<!-- 					</a>	 -->
+<!-- 				</td> -->
+<!-- 			</tr> -->
+<!-- 		</table> -->
 
-		<table style="  color: #00008B;" >     
-			<tr>
-				<td class="imageContainer" id=""> 
+<!-- 		<table style="  color: #00008B; width:80%;" >      -->
+<!-- 			<tr> -->
+<!-- 				<td class="imageContainer" id="">  -->
 					<a href="#"> 
-						<p style="margin-left: 80px; font-size: 70px; color: green;">
-						<img src="<c:url value="/resources/images/modrinization.png" />" alt="image"  style="width:80%; height: 353px; "/> 
-						</p>
+<!-- 						<p style=" font-size: 70px; color: green; width:80%; "> -->
+								<img src="<c:url value="/resources/images/modrinization.png" />" alt="image"  style="width:100%;  "/> 
+<!-- 						</p> -->
 					</a>	
-				</td>
-			</tr>
-		</table>
+<!-- 				</td> -->
+<!-- 			</tr> -->
+<!-- 		</table> -->
 		
-  	<br /> 
-		<table style="  color: #00008B;" >     
-			<tr>
-				<td class="imageContainer" id=""> 
-					<a href="#"> 
-						<p style="margin-left: 80px; font-size: 70px; color: green;">
-						<img src="<c:url value="/resources/images/developedby.jpg" />" alt="image"  style="width:80%; height: 386px; "/> 
-						</p>
-					</a>	
-				</td>
-			</tr>
-		</table>
+<!--   	<br /> -->
+  	
+  	 
+<!-- 		<table style="  color: #00008B;" >      -->
+<!-- 			<tr> -->
+<!-- 				<td class="imageContainer" id="">  -->
+<!-- 					<a href="#">  -->
+<!-- 						<p style="margin-left: 80px; font-size: 70px; color: green;"> -->
+<%-- 						<img src="<c:url value="/resources/images/developedby.jpg" />" alt="image"  style="width:80%; height: 386px; "/>  --%>
+<!-- 						</p> -->
+<!-- 					</a>	 -->
+<!-- 				</td> -->
+<!-- 			</tr> -->
+<!-- 		</table> -->
 		
 
-<p>
- 	<a href="/" style="font-weight: bold;color: white;"> Home</a>
- 	<br /> 
-	 <a href="" style="font-weight: bold; color: white;"> Contact</a>   
-	 <a target = "_blank" href="https://www.youtube.com/playlist?list=PLP-mhFFMWT9IaIU_Er99PVJq3Iq7pB4oH">   
-	 	<img src="<c:url value="/resources/images/youtub.gif" />" alt="image" class="circular_image_header"   style="width: 60px; height: 40px;"/> 
-	</a>
-	<img src="<c:url value="/resources/images/facebook.gif" />" alt="image" class="circular_image_header"   style="width: 60px; height: 40px;"/> 
-</p>
-<p style="margin-top: 50px;"><span style="font-size: 20px; font-weight: bold;">Developed by: </span>Mohammad Alrifai</p> </p></p>		
+<!-- 	<p> -->
+<!-- 	 	<a href="/" style="font-weight: bold;color: white;"> Home</a> -->
+<!-- 	 	<br />  -->
+<!-- 		 <a href="" style="font-weight: bold; color: white;"> Contact</a>    -->
+<!-- <!-- 		 <a target = "_blank" href="https://www.youtube.com/playlist?list=PLP-mhFFMWT9IaIU_Er99PVJq3Iq7pB4oH">    --> 
+<%-- <%-- 		 	<img src="<c:url value="/resources/images/youtub.gif" />" alt="image" class="circular_image_header"   style="width: 60px; height: 40px;"/>  --%>
+<!-- <!-- 		</a> -->
+<%-- 		<img src="<c:url value="/resources/images/facebook.gif" />" alt="image" class="circular_image_header"   style="width: 60px; height: 40px;"/>  --%>
+<!-- 	</p> -->
+<!-- <!-- 	<p style="margin-top: 50px;"><span style="font-size: 20px; font-weight: bold;">Developed by: </span>Mohammad Alrifai</p> </p></p>		 -->
+</div>
+<br>
+<br>
+<div style="border:1px solid gray; width: 100%;" >
+	<div style="border:1px solid gray; width: 100%;" align="left" >
+<!-- 	<p> -->
+	 	<a href="/" style="font-weight: bold;color: white; font-size: 40px;"> Home</a>
+	 	<br /> 
+	 	<br /> 
+		 <a href="" style="font-weight: bold; color: white;  font-size: 40px;"> Contact</a>
+		<br />
+	</div>    
+	<div style="border:1px solid gray; width: 100%;" align="right" >
+<!-- 		 <a target = "_blank" href="https://www.youtube.com/playlist?list=PLP-mhFFMWT9IaIU_Er99PVJq3Iq7pB4oH">    -->
+		 <a target = "_blank" href="#">   
+		 	<img src="<c:url value="/resources/images/youtub.gif" />" alt="image" class="circular_image_header"   style="width: 50%; "/> 
+		</a>
+		<br><br>
+		<a target = "_blank" href="#">
+			<img src="<c:url value="/resources/images/facebook.gif" />" alt="image" class="circular_image_header"   style="width: 50%; "/>
+		</a> 
 	</div>
-				
-	
+<!-- 	</p> -->
+<!-- 	<p style="margin-top: 50px;"><span style="font-size: 20px; font-weight: bold;">Developed by: </span>Mohammad Alrifai</p> </p></p>		 -->
+</div>		
+
+
+<c:forEach begin="0" end="100" varStatus="loop">
+<br class="verticalSpace">
+</c:forEach>	
+<a href="#"  >__________________________________________________________________________________________________________________________</a>
 </div>
 
-
-
-
+     
 </div> 
 </body>
 
@@ -831,7 +893,6 @@ nav{
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript">
 
-// $('#candidate1Id' ).show();
 
 $('#developedbId' ).show();
 $('#2017Td' ).hide(); 
@@ -847,7 +908,22 @@ $('#2026Td').hide();
 $('#2027Td').hide(); 
     
     
+function functionAlert(msg, myYes)
+{
+   var confirmBox = $("#confirm");
+   confirmBox.find(".message").text(msg);
+   confirmBox.find(".yes").unbind().click(function()
+   {
+      confirmBox.hide();
+   });
+   confirmBox.find(".yes").click(myYes);
+   confirmBox.show();
+}
+    
     window.onload = function() {
+    	
+    	functionAlert();
+//     	alert("اهلا بكم في موقع الانتخابات البرلمانيه الاردنيه هذا الموقع بمثابه حمله انتخابيه للتسهيل على المواطنين الذين يرغبون بالترشح لمجلس النواب الاردني 2024 لتاسيس حملتهم بجهد اقل ومصاريف اقل على هذا الموقع يمكنك هذا الموقع من معرفه عدد الاصوات التي يمكن ان تحصيدها بدقه هذا الموقع محمي ويحتوي على جميع المواطنين الاردنيين المؤهلين للترشح والمؤهلين للانتخاب فقط كل حسب منطقته التي يقطن بها ولا يسمح هذا الموقع لاي شخص بان يسجل نفسه كناخب او كمرشح في منطقه اخرى غير المنطقه التي يقطن بها اي مواطن اردني تنطبق عليه شروط الترشح والانتخاب له الاحقيه الكامله في الدخول الى هذا الموقع وتسجيل نفسه كمرشح لجلب الاصوات او كناخب للتصويت للمرشح للمرغوب به يسمح هذا الموقع في اي وقت يمكنك النقر على اشعار اليد مع العلم العوده الى الصفحه الرئيسيه يسمح لك هذا الموقع باختيار والتصويت لمرشحك المفضل الذي ترغب للتصويت له اذا لم يكن مرشحك مسجل في هذا الموقع خرج الى ما هو بضروره التسجيل في هذا الموقع كمرشح للبرلمان الاردني يمكنه هذا الموقع من مراقبه حملته الانتخابيه واعطائه رؤيه افضل عن عدد الاصوات التي يمكن ان يحصدها عن طريق هذا التسجيل في هذا الموقع الرجاء المعرفه ان هذا الموقع لا يعتبر موقعا رسميا ويمثل فقط حمله انتخابيه للتسهيل على المواطنين ولا يمثل اي انتخابات رسميه هذا الموقع ينبغي على الاشخاص الذين قاموا بالتسجيل في هذا الموقع ان يذهبوا ايضا للتسجيل والانتخاب الفعلي في الزمان والمكان التي عينتهما الحكومه الاردنيه الرجاء المعرفه طريقه التسجيل كنافذ او مرشح اردني انقر على تسجيل ناخب او مرشح التي تظهر في الشاشه الرئيسيه ثم اختر نوع التسجيل في اي وقت يمكن يمكنك النقر على قائمه المرشحين التي تظهر في الشاشه الرئيسيه ومن ثم اختيار المدينه والمنطقه التي ترغب في رؤيه قائمه مرشحيها عند النقر على الزر اوكي فانك توافق على جميع الشروط وسياسه هذا الموقع لمشاركه معلوماتك مع هذا الموقع بغرض مساعدتك في التسجيل كناخب او مرشح بعد عمليه تسجيلكناخب او كمرشح يمكنك تسجيل الدخول عن طريق النقر على الرابط او الزر تسجيل الذي يظهر على الشاشه الرئيسيه عند الوصول الى شاشه تسجيل الدخول بامكانك ادخال اسم المستخدم وكلمه المرور التي قمت بادخالهما اثناء عمليه التسجيل كناخب او مرشح بالاضافه الى رقمك الوطني باللغه الانجليزيه كما يظهر على الهويه في اي وقت يمكنك الضغط على الزر معلومات او الرابط الذي يظهر على الشاشه الرئيسيه لرؤيه هذه القائمه مره اخرى");
     	
 //     	$('#candidate1Id' ).show();
     	setTimeout(function() {

@@ -71,84 +71,60 @@ li a:hover:not(.active) {
 </head>
 
 <body>
- <div  class="fixedElement"  style="border: 3px solid #73AD21; background-color: #679FAB; width: 100%; height: 100px; color: white;" >  
-	<table style="margin-left: 100px;">            
+ <div dir="rtl" style="border: 3px solid #73AD21; background-color: #679FAB; width: 70%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; color: white;">  
+	<table style="width: 100%" >            
 		<tr>
-			<td>
+			<td style="width:20%;">
 				<p style=" margin-top: 1px;">
-				<span>Welcome Candidate:<br> ${candidateData.fullName}</span>  
-<!-- 					<a href="/">    -->
-<%-- 				  		<img src="<c:url value="/resources/images/jordanflagonhand.jpg" />" alt="image" class="circular_image_header"   style="width: 100px; height: 100px; "/> --%>
-<!-- 					</a> -->
+				<span>’›ÕÂ «·„—‘Õ «·»—·„«‰Ì  :<br> ${candidateData.fullName}</span>  
 				</p>
 			</td>
-			<td style="width: 50px;">
+			<td style="width: 10%">
 			</td>
-			<td style="width: 500px; font-size: 28px;">        
-					<p style="margin-left: 120px;">Election of Jordan</p>   
+			<td style="width: 50%; font-size: 28px;">        
+					<p >«·«‰ Œ«»«  «·‰Ì«»Ì… «·√—œ‰Ì… 2024</p>   
 			</td>
-			<td style="width: 250px;">
+			<td style="width: 10%">
 			</td>   
-			<td>  
-				<a href="/logoutPage">Logout</a>
+			<td  style="width:20%;">  
+				<a href="/logoutPage"> ”ÃÌ· Œ—ÊÃ</a>
 			</td>
 		</tr>
 	</table>
 </div>
-<!-- <div  class="fixedElement"  style="border: 3px solid #73AD21; background-color: #679FAB; width: 100%; height: 100px; color: white;" >   -->
-<!-- 	<table style="margin-left: 100px;">             -->
-<!-- 		<tr> -->
-<!-- 			<td>             -->
-<!-- 				<p style=" margin-top: 1px;">   -->
-<!-- 					<a href="/">    -->
-<%-- 				  		<img src="<c:url value="/resources/images/jordanflagonhand.jpg" />" alt="image" class="circular_image_header"   style="width: 100px; height: 100px; "/> --%>
-<!-- 					</a> -->
-<!-- 				</p> -->
-<!-- 			</td> -->
-<!-- 			<td style="width: 50px;"> -->
-<!-- 			</td> -->
-<!-- 			<td style="width: 500px;">         -->
-<!-- 				<h2 style=" margin-top: 10px;">    -->
-<!-- 					Election of Jordan   -->
-<!-- 				</h2> -->
-<!-- 			</td> -->
-<!-- 			<td style="width: 350px;"> -->
-<!-- 			</td>    -->
-<!-- 			<td>   -->
-<!-- 					<a href="/logoutPage">Logout</a>    -->
-<!-- 			</td> -->
-<!-- 		</tr> -->
-<!-- 	</table> -->
-<!-- </div> -->
+<div dir="rtl" style="width: 70%; margin-top: 0.05%; padding-top:4%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; background-color: lightgray; border: 3px solid lightgray;" >            
+
+
 <table >
 	<tr>
 		<td>
-			<label style="font-size: 20px; font-weight: bold; margin-left: 500px;">List of Votes Screen</label>
+			<label style="font-size: 20px; font-weight: bold; margin-left: 500px;">‘«‘Â ﬁ«∆„Â «·«‘Œ«’ «·–Ì‰ ﬁ«„Ê« »«· ’ÊÌ  · —‘ÌÕﬂ„</label>
 		</td>
 	</tr>
 </table>          
-<div style="width: 100%; margin-left: 100px; margin-top: 65px;">  
+<div style="width: 100%; margin-left: 100px; margin-top: 65px; font-size: 30px; font-weight: bold;">
+  
 
 <c:choose>
     <c:when test="${numberOfVotes=='0'}">
-	Currently you have no voters voted to you nomination.
+	Õ«·Ì« ·Ì” ·œÌﬂ  «Ì ‰«Œ»Ì‰ ’Ê Ê ·· —‘ÌÕﬂ  «·—Ã«¡ «· Ê«’· „⁄ «·‰«Œ»Ì‰ ·· ’ÊÌ  · —‘ÌÕﬂ ⁄‰ ÿ—Ìﬁ Â–« «· ÿ»Ìﬁ
     </c:when>    
     <c:otherwise>
 
 
-		<label style="font-size: 20px; font-weight: bold; margin-left: 1px;">Voters voted to <span style="background-color: lightgray">${candidateData.fullName}</span> are [${numberOfVotes}] as in below table:</label>
+		<label style="font-size: 16px; font-weight: bold; margin-left: 1px;">  Ã„Ì⁄ «·‰«Œ»Ì‰ «·–Ì‰ ’Ê Ê« · —‘ÌÕ <span style="background-color: lightgray">${candidateData.fullName}</span> «·⁄œœ [${numberOfVotes}] ﬂ„« ÌŸÂ— ›Ì «·ÃœÊ· «œ‰«Â:</label>
 		<table style="width: 800px;">  
 			<tr>
 				<td>    
 					<table style="width: 80%; border-collapse: separate;border-spacing: 0 1em;">   
 						<c:forEach items="${voterDataByCandidateIdList}" var="voterData">
 				    		<tr>
-					      		<td style="border: solid;"> 
+					      		<td > 
 					      			<c:out value="${voterData.fullName}" /> <span style="margin-left: 100px; "></span> 
 								<%-- <button value="${voterData.id}"></button> --%>
 					      		</td>
-					      		<td style="border: solid;">
-					      		<label style="float: right;">Voted</label>  
+					      		<td >
+					      		<label style="float: right;">ﬁ«„ »«· ’ÊÌ  ·ﬂ„</label>  
 					      		</td>
 					      		
 				    		</tr>	
@@ -166,7 +142,9 @@ li a:hover:not(.active) {
 
 
 <!-- 	Click Here to see all voters in your area -->
- 
+ 				<br class="verticalSpace">    
+				<br class="verticalSpace">    
+				<br class="verticalSpace">    
 
 	<div id="loginDiv" style="margin-top: 50px;">
 		<form action="signin" method = "GET">    
@@ -174,15 +152,21 @@ li a:hover:not(.active) {
 <%-- 			 <input class="input" type="password" name="password"  id="password" value="${userData.password}" style="display:none;"/>  --%>
 			 <input class="input" type="text" name="userName"  id="userName" value="${userData.userName}"  style="display:none;" /> 
 			 <input class="input" type="password" name="password"  id="password" value="${userData.password}" style="display:none;"/> 
-			 <input type="submit" value="Back" id="Login" name="Login" class="button" style="width: 55px; height: 30px; font-size: 16px;">  
+<!-- 			 <input type="submit" value="«·’›Õ… «·”«»ﬁ…" id="Login" name="Login" class="button" style="width: 10%; height: 30px; font-size: 16px;">   -->
+			 <input type="submit" value="«·’›Õ… «·”«»ﬁ…" id="Login" name="Login" class="button" style="width: 250px; height: 80px; font-size: 33px; font-weight: bold;">
 		</form>
 		<br class="verticalSpace">
 	</div>		
 
 </div>
 
-
-
+		
+<c:forEach begin="0" end="100" varStatus="loop">
+<br class="verticalSpace">
+</c:forEach>
+     
+				<a href="#" ><p style="text-align:center;  margin-bottom: 0%;  ">________________________________________________________________________________________</p></a>
+</div>
 
 </body>
 </html>

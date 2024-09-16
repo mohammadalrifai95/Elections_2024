@@ -6,6 +6,8 @@ package com.election.mainapp.test;
 
 public interface TestI {
 	
+	public static final String naming = "naming**"; 
+	
 	default String leg() {
 		
 		return "This has four legs";

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=windows-1256"
-    pageEncoding="windows-1256"%>
+<%-- <%@ page language="java" contentType="text/html; charset=windows-1256" pageEncoding="windows-1256"%> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  
 <%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- <%@ taglib prefix="mytags" tagdir="/WEB-INF/tags" %> --%>
@@ -104,127 +104,72 @@ li a:hover:not(.active) {
 </style>
 <body>
 
-<!-- <ul style="width: 220px;">    -->
-<!-- 	<li><a class="active" href="/home2">Home</a></li> -->
-<!-- 	<li><a href="/candidateinformation?viewName=home2" id="selectCityLi">How to become a Candidate</a></li> -->
-<!-- 	<li><a href="/candidacyconditions">Add New Candidate</a></li> -->
-<!-- 	<li><a href="/contactUs">Candidate/Voter</a></li> -->
-<!-- 	<li><a href="/news">News</a></li> -->
-<!-- 	<!--Note2--> -->
-
-<%-- 	<c:if test="${role == 'ROLE_ADMIN'}"> --%>
-<!--         <li><a href="/admin">Admin</a></li>  -->
-<%--     </c:if> --%>
-<%-- 	<c:if test="${role == 'ROLE_ADMIN'}"> --%>
-<!--         <li><a href="/callBusinessApp">Call Business App</a></li>  -->
-<%--     </c:if> --%>
-<!-- </ul> -->
-
-<!-- <header class="fixedElement"  style="background-color: #679FAB;  width: 1300px; height: 110px; color:black;">   -->
-<!-- 		<p style="margin-top: 5px;"></p>   -->
-<%-- 	 	<span style=""><h4>Welcome Candidate:</h4> ${candidateData.fullName}</span>     --%>
-<!-- 	 	<span style="margin-left: 275px; font-size: 25px; font-weight: bold;">Hello Election Application</span>    -->
-<!-- 	 	<a href="/logoutPage" style="margin-left: 1100px; ">Logout</a>  -->
-<!-- </header> -->
-<div  class="fixedElement"  style="border: 3px solid #73AD21; background-color: #679FAB; width: 100%; height: 100px; color: white;" >  
-	<table style="margin-left: 100px;">            
+<div dir="rtl" style="border: 3px solid #73AD21; background-color: #679FAB; width: 70%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; color: white;">  
+	<table style="width: 100%" >            
 		<tr>
-			<td>
+			<td style="width:20%;">
 				<p style=" margin-top: 1px;">
-				<span>Welcome Candidate:<br> ${candidateData.fullName}</span>  
-<!-- 					<a href="/">    -->
-<%-- 				  		<img src="<c:url value="/resources/images/jordanflagonhand.jpg" />" alt="image" class="circular_image_header"   style="width: 100px; height: 100px; "/> --%>
-<!-- 					</a> -->
+				<span>صفحه المرشح البرلماني  :<br> ${candidateData.fullName}</span>  
 				</p>
 			</td>
-			<td style="width: 50px;">
+			<td style="width: 10%">
 			</td>
-			<td style="width: 500px; font-size: 28px;">        
-					<p style="margin-left: 120px;">Election of Jordan</p>   
+			<td style="width: 50%; font-size: 28px;">        
+					<p >الانتخابات النيابية الأردنية 2024</p>   
 			</td>
-			<td style="width: 250px;">
+			<td style="width: 10%">
 			</td>   
-			<td>  
-				<a href="/logoutPage">Logout</a>
+			<td  style="width:20%;">  
+				<a href="/logoutPage">تسجيل خروج</a>
 			</td>
 		</tr>
 	</table>
 </div>
  
-<div style="width: 1100px; height:800px; margin-left: 20px; margin-top: 100px;">            
-
-<table style="width: 100%; ">
+<div dir="rtl" style="width: 70%; margin-top: 0.05%; padding-top:4%; padding-right:5%;padding-left:5%; margin-right:5%; margin-left:5%; background-color: lightgray; border: 3px solid lightgray;" >            
+<table style="width: 100%;">
 	<tr>
 		<td>
-			<label style="font-size: 20px; font-weight: bold; margin-left: 400px;">Candidate Details Screen</label>
+			<label style="font-size: 20px; font-weight: bold; margin-left: 40%;">شاشة تفاصيل المرشح</label>
 		</td>
 	</tr>
 	<tr>
 		<!--Table1 -->
 		<td> 
-			<table style="border-collapse: separate;border-spacing: 0 1em; width: 560px; margin-top: -80px;">
-				<tr>
-					<td>Full name as entered :</td>  
-					<td>${candidateData.fullName}
-					</td> 
+			<table style=" width: 100%; font-size: 20px;">
+				<tr style=" width: 100%;">
+					<td width="50%">الاسم الكامل كما تم إدخاله:</td>  
+					<td width="50%">${candidateData.fullName}</td> 
 				</tr>
 				<tr>
-					<td>Full name English :</td>  
-					<td>${candidateData.englishFullName}</td> 
+					<td width="50%">اسم المحافظة :</td>    
+					<td width="50%">${governorateData.arabicName}</td>  
 				</tr>
 				<tr>
-					<td>Governorate name :</td>   
-					<td>${governorateData.name}</td> 
+					<td width="50%">الدائرة الانتخابية:</td>
+					<td width="50%">${constituencyData.arabicName}</td>					     
 				</tr>
-				<tr>
-					<td>Governorate Arabic Name :</td>    
-					<td>${governorateData.arabicName}</td>  
-				</tr>
-				<tr>
-					<td>Constituency Name :</td>     
-					<td>${constituencyData.name}</td>  
-				</tr>
-				<tr>
-					<td>Constituency Arabic Name :</td>    
-					<td>${constituencyData.arabicName}</td>  
-				</tr>
-<!-- 				<tr> -->
-<!-- 					<td>Number Of Votes:</td>  -->
-<%-- 					 <td style="font-weight: bold; font-size: 20px; border: solid; text-align: center;">${numberOfVotes}</td> --%>
-<!-- 				</tr>  -->
-				<tr>
-					<td>Click this link to voters of your candidity : </td> 
-					 <td style="font-weight: bold; font-size: 20px;"><a href="/SeeListOfVoters?userName=${userData.userName}&password=${userData.password}">See List of Voters</a></td>
-				</tr> 
-				<tr>
-					<td style="width: 250px;">Click this link to see all Candidates in your region: </td> 
-					 <td style=" "><a href="/SeeListOfCandidates?userName=${userData.userName}&password=${userData.password}">See List of Candidates </a></td>
-				</tr>							
 				
-<!-- 				<tr> -->
-<!-- 					<td>Click below link to see all  names who voted to your candidity</td> -->
-<!-- 				</tr> -->
-<!-- 				<tr> -->
-<!-- 					<td><a href="/SeeListOfVoters" style="margin-left: 1100px; ">See List of Voters</a> </td> -->
-<!-- 				</tr> -->
+				
+				<tr style="height: 50%">
+		 			<td>
+		 			</td>
+				</tr>
+
+<!-- 				<tr>  -->
+<%-- 					 <td style="font-weight: bold; font-size: 20px;"><a href="/SeeListOfVoters?userName=${userData.userName}&password=${userData.password}&ssn=${userData.ssn}"> انقر هنا لرؤيه جميع الناخبين الذين قاموا بانتخابك </a></td> --%>
+<!-- 				</tr>  -->
+<!-- 				<tr>  -->
+<%-- 					 <td style=" "><a href="/SeeListOfCandidates?userName=${userData.userName}&password=${userData.password}&ssn=${userData.ssn}">انقر هنا لرؤيه جميع المرشحين المتواجدين في نفس دائرتك الانتخابيه</a></td> --%>
+<!-- 				</tr>							 -->
 			</table>	
 		</td>
-		
-		<!--Table2 -->
-<!-- 			<label style="margin-left: 90px;"> -->
-<!-- 				No image uploaded for this candidate -->
-<!-- 			</label><br><br>  -->
-		<%-- <img src="<c:url value="/resources/images/candidateDefault.png" />" alt="image"  style="width:482px; height: 186px; "/>  --%>
-		<%--<img src="<c:url value="${candidateData.imageData}" />" alt="image"  style="width:482px; height: 186px; "/> --%>
-		<%--<img src="${candidateData.imageData}" alt="image"  style="width:482px; height: 186px; "/>  --%>
-		<%--<img alt="img" src="data:image/jpeg;base64,${candidateData.base64image}"/> --%>
-		
 		<td>
 			<table style="margin-top: -30px;">
 				<tr>
-					<td>
-						<a href="/SeeListOfVoters?userName=${userData.userName}&password=${userData.password}" style="font-size: 20px; margin-left: 60px;">Total Votes  
-							<button style="font-size: 30px;  background-color: blue;color: white; width: 50px; height:50px; margin-left: 10px;" >${numberOfVotes}</button>
+					<td dir="rtl">
+						<a href="/SeeListOfVoters?userName=${userData.userName}&password=${userData.password}&ssn=${userData.ssn}" style="font-size: 20px; ">مجموع الأصوات  
+							<button style="font-size: 30px;  background-color: blue;color: white; width: 40%; height:40%; " >${numberOfVotes}</button>
 						</a>
 					</td>
 				</tr>
@@ -233,45 +178,46 @@ li a:hover:not(.active) {
 					
 						<c:choose>
 						    <c:when test="${empty candidateData.base64image}">
-						    	<img src="<c:url value="/resources/images/candidateDefault.png" />" alt="image"  style="width: 300px; height: 300px;"/>
+						    	<img src="<c:url value="/resources/images/candidateDefault.png" />" alt="image"  style="width: 200px; height: 200px;"/>
 						    </c:when>    
 						    <c:otherwise>
-<%-- 						    	<img alt="img" src="data:image/jpg;base64,${candidateData.base64image}" style="width: 300px; height: 300px;"/> --%>
-<%-- 						    	<img alt="img" src="data:image/jpg;base64,${candidateData.base64image}" style="width: 300px; height: 300px;"/> --%>
-						    	<img alt="img" src="data:image/png;jpg;jpeg;charset=utf-8;base64,${candidateData.base64image}" style="width: 300px; height: 300px;"/>
-						    	
+						    	<img alt="img" src="data:image/png;jpg;jpeg;charset=utf-8;base64,${candidateData.base64image}" style="width: 200px; height: 200px;"/>
 						    </c:otherwise>
 						</c:choose>
 								
 					</td>
 				</tr>
 				<tr>
-					<td><p style="margin-left: 70px;"> ${candidateData.fullName}</p></td>
+					<td style="font-size: 20px;"><p style="margin-left: 1%;"> ${candidateData.fullName}</p></td>
 				</tr>
 			</table>
-<%-- 		    <a href="/SeeListOfVoters?userName=${userData.userName}&password=${userData.password}" style="font-size: 20px;">See total List of Voters  </a> --%>
-<%-- 		    <span style="font-size: 30px;  background-color: blue;color: white; width: 100%; " >${numberOfVotes}</span> --%>
-<!-- 		    <br><br> -->
-<%-- 			<img alt="img" src="data:image/jpg;base64,${candidateData.base64image}" style="width: 300px; height: 300px;"/>  --%>
-
 		</td>
-
-
-		<!--Table3 -->
 		<td>
 		
 		</td>
 	</tr>
 </table>
 
+<table>
+				<tr> 
+					 <td style="font-weight: bold; font-size: 20px;"><a href="/SeeListOfVoters?userName=${userData.userName}&password=${userData.password}&ssn=${userData.ssn}"> انقر هنا لرؤيه جميع الناخبين الذين قاموا بانتخابك </a></td>
+				</tr> 
+				<tr style="height: 50%;"> 
+					<td>....................................................................................................</td>
+				</tr> 
+				<tr> 
+					 <td style="font-weight: bold; font-size: 20px;"><a href="/SeeListOfCandidates?userName=${userData.userName}&password=${userData.password}&ssn=${userData.ssn}">انقر هنا لرؤيه جميع المرشحين المتواجدين في نفس دائرتك الانتخابيه</a></td>
+				</tr>	
+</table>
+
+
+<c:forEach begin="0" end="100" varStatus="loop">
+<br class="verticalSpace">
+</c:forEach>
+    
+<a href="#"  >__________________________________________________________________________________________________________________________</a>
 
 </div>
-
-
-
-
-
-
 
 </body>
 

@@ -284,9 +284,7 @@ The names of the council members are in alphabetical order:<br><br>
 <br><br>
 <div style="background-color: lightgray"> 
 <h1>References</h1> 
- "| „Ã·” «·‰Ê«» «·«—œ‰Ì". 2020-01-27. Archived from the original on 2020-01-27. Retrieved 2022-01-23.
- "≈—«œ… „·ﬂÌ… »Õ· „Ã·” «·‰Ê«»". —ƒÌ« «·√Œ»«—Ì (in Arabic). Retrieved 2022-01-23.
- "| „Ã·” «·‰Ê«» «·«—œ‰Ì". 2020-02-27. Archived from the original on 2020-02-27. Retrieved 2022-01-23.
+  
  </div>
  
 </div>

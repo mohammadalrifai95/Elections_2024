@@ -52,7 +52,7 @@ public class VoterData implements Serializable{
 	@Column(name = "id", nullable = false, columnDefinition = "int default 1") 
 	private Integer id;
 	private String fullName;
-	private Integer ssn;
+	private Long ssn;
 	
 	private String userName;
 	private String  password;

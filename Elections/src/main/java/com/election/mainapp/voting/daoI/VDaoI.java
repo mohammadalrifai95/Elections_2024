@@ -32,6 +32,10 @@ public interface VDaoI extends JpaRepository<VoterData, Integer>{
 	List<VoterData> findVoterDataListByCandidateId(Integer candidateId);
 	
 	Optional<VoterData> findBySsn(int ssn);
+	
+	Optional<VoterData> findBySsn(Long ssn);
+	
+	Optional<VoterData> findBySsn(String ssn);
 
 	@Query(value ="select data from VoterData data where data.fullName= :fullName and  data.governorateData.id= :governorateId and  data.constituencyData.id= :constituencyId  ")
 	Optional<VoterData> fullName(String fullName, Long   governorateId, Integer constituencyId);

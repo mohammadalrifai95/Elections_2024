@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.election.mainapp.voting.data.CandidateData;
 import com.election.mainapp.voting.data.ConstituencyData;
 import com.election.mainapp.voting.data.GovernorateData;
+import com.election.mainapp.voting.data.VoterData;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,6 +40,14 @@ public interface CandidateDaoI  extends JpaRepository<CandidateData, Integer>{
 
 	long  countById(Integer id);
 	
+	Optional<CandidateData> findBySsn(Long ssn);
+	
+	Optional<CandidateData> findBySsn(String ssn);
+	
+	//public Optional<CandidateData> findFullName(String fullName, Long governorateId, Long constituencyId);
+	
+	@Query(value ="select data from CandidateData data where data.fullName= :fullName and  data.governorateData.id= :governorateId and  data.constituencyData.id= :constituencyId  ")
+	public Optional<CandidateData> fullName(String fullName, Long   governorateId, Integer constituencyId);
 	
 //	@Query("from CandidateData  where id between ? and ?")
 //	List<CandidateData> findaCandidateDatasLimited();

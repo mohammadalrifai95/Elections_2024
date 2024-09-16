@@ -91,21 +91,21 @@ li a:hover:not(.active) {
 	<table style="width: 600px;height: 180px; padding-top: 100px;  margin-left: 150px; " > 
 		<tr>
 			<td>
-				<span style="float: left; margin-left: 40px;">
-					You have successfully voted
+				<span style="float: left; margin-left: 40px; font-size:25px;">
+					áŞÏ ŞãÊ ÈÇáÊÕæíÊ ÈäÌÇÍ
 				</span>
 				<br>
-				<span style="float: left">
-					In order to see new update please sing in.
+				<span style="float: left; font-size:25px;">
+					áßí ÊÊãßä ãä ÑÄíå ÇáÊÍÏíË ÇáÌÏíÏ íÑÌì ÊÓÌíá ÇáÏÎæá
 				</span>
 			</td>
 		</tr>
 	</table>
 	
-	<table style="width: 600px;height: 180px;  margin-left: 100px;">
+	<table style="width: 600px;height: 180px;  margin-left: 100px; ">
 		<tr>
-			<td><a href="/logoutPage" style="font-size:25px; font-weight: bold;">Sign in</a></td>
-			<td><a href="/" style="font-size:25px; font-weight: bold;">Home</a></td>  
+			<td><a href="/" style="font-size:25px; font-weight: bold;">ÇáÕİÍÉ ÇáÑÆíÓíÉ</a></td>  
+			<td><a href="/logoutPage" style="font-size:25px; font-weight: bold;">ÊÓÌíá ÇáÏÎæá</a></td>
 		</tr>
 	</table>
 

@@ -147,8 +147,9 @@ public class HomeController {
 	//public String login(HttpServletRequest request, Boolean...fetchCandidateListStatus) {
 		public String home(HttpServletRequest request, String...language) {
 
+		HttpSession session = null ;
 		if(language != null && StringUtility.isNotEmpty(language[0])) {
-			HttpSession session = request.getSession();
+			 session = request.getSession();
 			session.setAttribute("language", language[0]);
 			return "home_en"; 
 		}
@@ -163,7 +164,17 @@ public class HomeController {
 		byte[] encodeBase64 = null;
 		List<CandidateData> candidateDataList = null;
 //		2024
-		if(cDataList!=null && cDataList.size()>3) {
+//		if(cDataList!=null && cDataList.size()>3) {
+		if(cDataList!=null && cDataList.size()==1) {
+			candidateDataList = cDataList.subList(cDataList.size()-1, cDataList.size());			
+		}
+		if(cDataList!=null && cDataList.size()==2) {
+			candidateDataList = cDataList.subList(cDataList.size()-2, cDataList.size());			
+		}
+		if(cDataList!=null && cDataList.size()==3) {
+			candidateDataList = cDataList.subList(cDataList.size()-3, cDataList.size());			
+		}
+		if(cDataList!=null && cDataList.size()==4) {
 			candidateDataList = cDataList.subList(cDataList.size()-4, cDataList.size());			
 		}
 		if(candidateDataList!=null) {	
@@ -176,7 +187,7 @@ public class HomeController {
 			encodeBase64 = Base64.encodeBase64(cData.getImageData());
 			base64Encoded = null;
 			try {
-				if(encodeBase64!=null) {
+				if(encodeBase64!=null) {//UTF-8mb4
 					base64Encoded = new String(encodeBase64, "UTF-8");					
 				}
 			} catch (UnsupportedEncodingException e) {
@@ -222,6 +233,9 @@ public class HomeController {
 	//public ModelAndView login(@RequestParam("userName")  String userName, @RequestParam("password") String password , HttpServletRequest request,  String ... alredyLoggedin) {
 		public ModelAndView signin(UserData usrdta, HttpServletRequest request, String ... alredyLoggedin) {
 		
+		
+		VoterData voterData =   null;
+		CandidateData candidateData =   null;
 		ModelAndView mv= new ModelAndView(); 
 	
 		
@@ -258,8 +272,72 @@ public class HomeController {
 //		}
 		
 		//userData = genericService.findUser(usrdta);
-		userData = genericService.findUserByUsernmePassAndSsn(usrdta);
+		List<UserData> userDataList= genericService.findUserByUsernmePassAndSsn(usrdta);
 		
+//		if(userData.getIsUniqueRequrd()) {
+//			//return;
+//			mv.setViewName("loginascandidteorvoter");
+//			return mv; 
+//		}
+		 if(userDataList !=null && userDataList.size()>1 ) {
+			 
+			 if(usrdta!=null && StringUtility.isNotEmpty(usrdta.getIsItCandidateOrVoter()) && usrdta.getIsItCandidateOrVoter().equals("voter")) {
+				 
+				 if(userDataList.get(0).getVData()!=null) {
+					 userData = userDataList.get(0);					 
+				 }
+				 
+				 if(userDataList.get(1).getVData()!=null) {
+					 userData = userDataList.get(1);					 
+				 }
+				 
+				 voterData =   userData.getVData();
+				 
+			 }else
+			 if(usrdta!=null && StringUtility.isNotEmpty(usrdta.getIsItCandidateOrVoter()) && usrdta.getIsItCandidateOrVoter().equals("candidate")) {
+				 
+				 if(userDataList.get(0).getCandidateData()!=null) {
+					 userData = userDataList.get(0);					 
+				 }
+				 
+				 if(userDataList.get(1).getCandidateData()!=null) {
+					 userData = userDataList.get(1);					 
+				 }
+				 
+				 candidateData =   userData.getCandidateData();
+				 
+				 
+			 }else {
+				 request.setAttribute("userDataList", userDataList);
+				 mv.setViewName("loginascandidteorvoter");
+				 userData = userDataList.get(0);	 
+				 
+			     String userName = userData.getUserName();
+			     String  password = userData.getPassword();
+			     Long ssn = userData.getSsn();
+				 
+				 
+
+					session.setAttribute("userName", userData.getUserName());
+					session.setAttribute("password", userData.getPassword());
+
+					request.setAttribute("userData", userData);
+					session.setAttribute("userData", userData);
+
+					request.setAttribute("candidateData", candidateData);
+					
+					//mv.setViewName("home2");
+				
+				 
+				 
+				 return mv;				 
+			 }
+		 }
+		 //if voter or candidate found with data entered from screen then set it to below userData other wise userData = null  
+		 if(userDataList !=null && userDataList.size()>0 && userData ==null) {
+		 userData = userDataList.get(0);
+		 }
+		 
 		session.setAttribute("userData", userData);
 		if(userData != null ) {
 			session.setAttribute("userId", userData.getId());
@@ -307,8 +385,12 @@ public class HomeController {
 			populateListOfCity(mv, request);
 			//mv.setViewName("home2"); 
 			
-			VoterData voterData =   userData.getVData();
-			CandidateData candidateData =   userData.getCandidateData();
+			if(voterData==null) {
+				voterData =   userData.getVData();				
+			}
+			if(candidateData ==null) {
+				candidateData =   userData.getCandidateData();				
+			}
 			if(candidateData==null && voterData!=null) {
 				candidateData=voterData.getCandidateData();
 			}
@@ -1241,42 +1323,8 @@ public class HomeController {
 
 		List<String> messageList = new ArrayList<String>();
 
-//		
-//		if(voterData!=null && voterData.getSsn()!=null) {
-//			Optional<VoterData> vd = voterService.findBySsn(voterData.getSsn());
-//			VoterData vData =vd.orElse(null);
-//			if(vd!=null && vData.getSsn()!=null) {
-//				
-////				messageList.add("You can not register with this information as ssn already registered");
-////				messageList.add("Please try with other information");
-//				
-//				messageList.add(0, "You can not register with this information as ssn already registered");
-//				messageList.add(1, "Please try with other information");
-//				
-////				System.out.println("The name you entered is not registered in 2023, please register your name at Independent Election Commission before you register in this application");
-//				
-//
-//				return messageList;
-//			}	
-//		}
 		
-		
-		if(
-				StringUtility.isEmpty(voterData.getFullName())
-//				|| voterData.getGovernorateData()!=null
-//				|| voterData.getConstituencyData()!=null
-//				|| voterData.getRegionData()!=null
-				
-//				StringUtility.isEmpty(voterData.getFirstName()) 
-//				|| StringUtility.isEmpty(voterData.getLastName())
-				//|| StringUtility.isEmpty(candidateData.getMobile())
-				//|| StringUtility.isEmpty(candidateData.getEmail())
-				//|| StringUtility.isEmpty(candidateData.getSsn())
-				//|| StringUtility.isEmpty(candidateData.getLocation())
-//				|| StringUtility.isEmpty(candidateData.getUserName())
-//				|| StringUtility.isEmpty(candidateData.getPassword()
-				
-				) {
+		if(StringUtility.isEmpty(voterData.getFullName())) {
 			messageList.add("Failed_Registration");
 			messageList.add("Please fill all below required fields in order to add new candidate");
 			return messageList;
@@ -1285,7 +1333,17 @@ public class HomeController {
 		String fullName = voterData.getFullName();
 		Integer governorateId = voterData.getGovernorateId();
 		Integer constituencyId = voterData.getConstituencyId();
-		Integer ssn = voterData.getSsn();
+		Long ssn = voterData.getSsn();
+		if(ssn==null) {
+//			String ssnStr = voterData.getSsnStr();
+			//String ssnStr = voterData.getSsnStr();
+			ssn = Long.parseLong(voterData.getSsnStr());
+			//ssn   = Integer.valueOf(ssnStr);
+			//Integer ssnInt = Integer.getInteger(ssnStr);
+			//ssn  = Integer.parseInt(voterData.getSsnStr().trim());
+//			ssn   = (int) (long) ssnLong;
+		}
+		
 		messageList = enterNewName(fullName, governorateId , constituencyId , ssn ); 
 		
 		if(messageList!=null && messageList.get(0).equals("Failed_Registration")) {
@@ -1305,11 +1363,11 @@ public class HomeController {
 		HttpSession session = request.getSession();
 
 		session.setAttribute("voterData", voterData);
-		messageList.add("You have Successfully registered, you now can sign in with your credential");
+		messageList.add("لقد قمت بالتسجيل بنجاح، يمكنك الآن تسجيل الدخول باستخدام بيانات الاعتماد الخاصة بك");
+		//messageList.add("You have Successfully registered, you now can sign in with your credential");
 		
 		setDetailsToVoter(voterData, request);
-		
-		
+				
 		//genericService.saveCandidate(cndidtDta);
 		voterService.saveVoter(voterData);
 		
@@ -1370,134 +1428,48 @@ public class HomeController {
 		
 		List<String> messageList = new ArrayList<String>();
 		
-		if(
-				StringUtility.isEmpty(candidateData.getFullName())
-				) {
+		if(StringUtility.isEmpty(candidateData.getFullName())) {
 			messageList.add("Candidate registration failed");
 			messageList.add("Please fill all below required fields in order to add new candidate");
 			return messageList;
 		}
 		
-//		if(candidateData.getImageData()!=null) {
 		  HttpSession session = request.getSession();
 		  byte[] bytesOfImage= (byte[]) session.getAttribute("bytes");
 		  
-//			if(StringUtility.isNotEmpty(candidateData.getPath())) {
 				if(bytesOfImage!=null) {
-			//File file = new File(candidateData.getPath());
-			//byte[] imageData = new byte[(int) file.length()];
-			//byte[] fileLength= new byte[(int) file.length()];
-			//candidateData.setImageData(new byte[(int) file.length()]);
-			  
 
-			  // file to byte[], Path
 			  try {
 				  String filePath = candidateData.getPath(); 
 				  MultipartFile multipartFile = candidateData.getMultipartFile();
 					byte[] bytes = multipartFile.getBytes();
 					
 					bytes = formData.getBytes();
-					//Path path = Paths.get(UPLOAD_FOLDER + multipartFile.getOriginalFilename());
-				  //String filePath2 = candidateData.getPath2();
-				  //filePath = "/resources/images/"+"ali alrifai.png";
-				  //filePath = "\\resources\\images\\"+"ali alrifai.png";
-
-				//byte[] bytes = Files.readAllBytes(Paths.get(filePath));
-				  // file to byte[], File -> Path
-				  //filePath = "C:\\Users\\asf\\Downloads\\Tarek Sami Hanna Khoury.jpg";
-				  //filePath = "C:\\Users\\asf\\Downloads\\ali alrifai.png"; 
 				  
 				  //"C:\\myfile.txt"
 				  File file = new File(filePath);
 				  byte[] bytess = Files.readAllBytes(file.toPath());
 				  candidateData.setImageData(bytess);
-				
 				  candidateData.setImageData(bytes);
-				  
-				  
-//				  String filePath = candidateData.getPath();
-
-		            // file to bytes[]
-//		            byte[] bytes = Files.readAllBytes(Paths.get(filePath));
-
-		            // bytes[] to file
-		            //Path path = Paths.get(filePath);
-		            //Files.write(path, bytes);
-//		            candidateData.setImageData(bytes);
-				  
-				  
-//				  File imgPath = new File(candidateData.getPath());
-//				  BufferedImage bufferedImage = ImageIO.read(imgPath);
-//
-//				  // get DataBufferBytes from Raster
-//				  WritableRaster raster = bufferedImage .getRaster();
-//				  DataBufferByte data   = (DataBufferByte) raster.getDataBuffer();
-//				  byte [] imageData= data.getData();
-//				  candidateData.setImageData(imageData);
-//				  
-//				  URL imageURL = new URL(profileImgUrl);
-//				  BufferedImage originalImage=ImageIO.read(imageURL);
-//				  ByteArrayOutputStream baos=new ByteArrayOutputStream();
-//				  ImageIO.write(originalImage, "jpg", baos );
-//
-//				  //Persist - in this case to a file
-//
-//				  FileOutputStream fos = new FileOutputStream("outputImageName.jpg");
-//				  baos.writeTo(fos);
-//				  fos.close();
-				  
-//				  ImageData.builder()
-//	                .name(file.getOriginalFilename())
-//	                .type(file.getContentType())
-//	                .imageData(ImageUtil.compressImage(file.getBytes())).build()
-//				  
-				  
-//				  String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-//			        user.setPhotos(fileName);
-//			         
-//			        User savedUser = repo.save(user);
-//			 
-//			        String uploadDir = "user-photos/" + savedUser.getId();
-//			 
-//			        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-				  
-//				     String fileName = StringUtils.cleanPath(candidateData.getMultipartFile().getOriginalFilename());
-//				     candidateData.setPhoto(fileName);
-				         
-//				        User savedUser = repo.save(user);
-				 
-//				        String uploadDir = "user-photos/" + savedUser.getId();
-				 
-//				        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
 			        
 			} catch (IOException e) {
-//				// TODO Auto-generated catch block
 				e.printStackTrace();
-				
-				
 			}
-			
 		} 
 		
 		String fullName = candidateData.getFullName();
-//		if(StringUtility.isEmpty(candidateData.getSingupAsvoterFlag()) && candidateData.getSingupAsvoterFlag().equals(true)) {
 		if(true) {
-//			messageList = enterNewName(fullName);
 			Integer governorateId = candidateData.getGovernorateId();
 			Integer constituencyId = candidateData.getConstituencyId();
-			String ssn = candidateData.getSsn();
-			messageList = enterNewName(fullName, governorateId , constituencyId , Integer.valueOf(ssn) );
+			String ssnStr = candidateData.getSsn();
+			Long ssnLong = Long.parseLong(ssnStr);
+
+			messageList = enterNewName(fullName, governorateId , constituencyId , ssnLong, true);
 			
 			if(messageList.get(0).equals("Failed_Registration")) {
 				return messageList;
 			}			
 		}
-		
-//		below 2 lines moved to method(voterRegisterWithCredential)
-//		UserData userData = new UserData();
-//		genericService.saveCandidate(candidateData);
-//		HttpSession session = request.getSession();
-		
 		
 		messageList.add("You have Successfully registered, you now can sign in with your credential");
 		session.setAttribute("candidateData", candidateData);
@@ -1505,7 +1477,6 @@ public class HomeController {
 		
 		//genericService.saveCandidate(cndidtDta);
 		candidateService.saveCandidate(candidateData);
-		
 		
 		return messageList;
 	}
@@ -1642,7 +1613,7 @@ public class HomeController {
 		Long ssn = Long.parseLong(ssnStr);
 		Integer ssnInt = Integer.getInteger(ssnStr);
 		userData.setSsn(ssn);
-		voterData.setSsn(ssnInt);
+		voterData.setSsn(ssn);
 		userData.setFullName(voterData.getFullName()); 
 		//userData.setGenericDateAndTimeData(new GenericDateAndTimeData());  
 		userData.getGenericDateAndTimeData().setCreatedBy(voterData.getUserName());
@@ -1873,15 +1844,31 @@ public class HomeController {
 	}
 	
 		@GetMapping(value = "/SeeListOfVoters")
-		public ModelAndView  SeeListOfVoters(HttpServletRequest request,String userName, String password, String ...viewName) { 
+		public ModelAndView  SeeListOfVoters(HttpServletRequest request,String userName, String password, Long ssn, String ...viewName) { 
 		
 		ModelAndView  mv = new ModelAndView();
 		HttpSession session = request.getSession();
 
 		UserData usrdta = new UserData();
 		usrdta.setUserName(userName);
-		usrdta.setPassword(password);
-		UserData userData = genericService.findUser(usrdta);
+ 		usrdta.setPassword(password);
+ 		usrdta.setSsn(ssn);
+		
+		UserData userData = null;
+		try {
+			
+			userData = genericService.findUser(usrdta);
+		} catch (Exception e) {
+			List<UserData> userDataList= genericService.findUserByUsernmePassAndSsn(usrdta);
+			for (UserData userDataItr : userDataList) {
+				
+				if(userDataItr.getCandidateData()!=null) {
+					userData = userDataItr ;
+				}
+					
+			}
+			e.printStackTrace();
+		}
 
 		CandidateData candidateData = null;
 		if(userData!=null) {
@@ -1933,7 +1920,7 @@ public class HomeController {
 	
 	
 	@GetMapping(value = "/SeeListOfCandidates")
-	public ModelAndView  SeeListOfCandidates(String userName, String password, HttpServletRequest request, String ...viewName) { 
+	public ModelAndView  SeeListOfCandidates(String userName, String password, Long ssn, HttpServletRequest request, String ...viewName) { 
 		
 		ModelAndView  mv = new ModelAndView();
 		HttpSession session = request.getSession();
@@ -1945,7 +1932,29 @@ public class HomeController {
 		UserData usrdta = new UserData();
 		usrdta.setUserName(userName);
 		usrdta.setPassword(password);
-		UserData userData = genericService.findUser(usrdta);
+		usrdta.setSsn(ssn);
+		//UserData userData = genericService.findUser(usrdta);
+		
+		UserData userData = null;
+		try {
+			
+			//userData = genericService.findUser(usrdta);
+			List<UserData> userDataList = genericService.findUserByUsernmePassAndSsn(usrdta);
+			if(userDataList!=null && userDataList.size()>=1)
+			userData = userDataList.get(0);
+		} catch (Exception e) {
+			List<UserData> userDataList= genericService.findUserByUsernmePassAndSsn(usrdta);
+			for (UserData userDataItr : userDataList) {
+				
+				if(userDataItr.getCandidateData()!=null) {
+					userData = userDataItr ;
+				}
+					
+			}
+			e.printStackTrace();
+		}
+		
+		
 		session.setAttribute("userData", userData);
 		
 		CandidateData candidateData = userData.getCandidateData();
@@ -2001,14 +2010,22 @@ public class HomeController {
 		
 		if(candidateDataList!=null) {
 			for(CandidateData cndidteData: candidateDataList ) {
+				try {
+					cndidteData.setNumberOfVotes(voterService.findNumberOfVotesByCandidateId(cndidteData.getId()));
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				
-				cndidteData.setNumberOfVotes(voterService.findNumberOfVotesByCandidateId(cndidteData.getId()));
+				
 				if(cndidteData.getImageData()!=null) {
-					byte[] encodeBase64 = Base64.encodeBase64(cndidteData.getImageData());
+					byte[] encodeBase64 = null;
 					String base64Encoded = null;
 					try {
+					encodeBase64 = Base64.encodeBase64(cndidteData.getImageData());
+					base64Encoded = null;
 						base64Encoded = new String(encodeBase64, "UTF-8");
-					} catch (UnsupportedEncodingException e) {
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
 					cndidteData.setBase64image(base64Encoded);
@@ -2133,7 +2150,7 @@ public class HomeController {
 	}
 	
 	
-	private List<String> enterNewName(String fullName, Integer governorateId , Integer constituencyId, Integer ssn) { 
+	private List<String> enterNewName(String fullName, Integer governorateId , Integer constituencyId, Long ssn, boolean ...isItCandidate) { 
 //		Scanner input = new Scanner(System.in);
 		//System.out.println("Enter your full name as it appears in you id");
 		//String userName = input.nextLine();
@@ -2142,7 +2159,13 @@ public class HomeController {
 		messageList = checkIfEnteredNameAlreadyRegistedIn2020(fullName, governorateId , constituencyId);
 		List<String> newMessageList = null;
 		if(messageList!=null && messageList.get(0)!=null && messageList.get(0).equals("Successfull Registration") ) {
-			newMessageList = checkIfEnteredNameIsInDb(fullName, Long.valueOf(governorateId) , Long.valueOf(constituencyId), ssn);			
+			if(isItCandidate!= null && isItCandidate.length>0 && isItCandidate[0]) {
+				//Candidate
+				newMessageList = checkIfEnteredNameIsInDb(fullName, Long.valueOf(governorateId) , Long.valueOf(constituencyId), ssn, isItCandidate[0]);	
+			}else {
+				//Voter
+				newMessageList = checkIfEnteredNameIsInDb(fullName, Long.valueOf(governorateId) , Long.valueOf(constituencyId), ssn);				
+			}
 		}
 		 
 		if(newMessageList!=null && newMessageList.size()>0 ) {
@@ -2155,40 +2178,147 @@ public class HomeController {
 	}
  
 
-	private List<String> checkIfEnteredNameIsInDb(String fullName, Long governorateId, Long constituencyId,  Integer ssn) {
-		
-		Optional<VoterData> votrData = voterService.findFullName(fullName, governorateId, constituencyId);
-		VoterData voterData = votrData.orElse(null);
+	private List<String> checkIfEnteredNameIsInDb(String fullName, Long governorateId, Long constituencyId,  Long ssn, boolean ...isItCandidate) {
 		
 		List<String> messageList = new ArrayList<String>();
-		if(voterData !=null && voterData.getId()!=null) {
-			Date CreatedTs = voterData.getGenericDateAndTimeData().getCreatedTs();
-			Date _3DaysBefore = getPreviousDate();
-			if (CreatedTs.before(_3DaysBefore )) { 
-				
-				messageList.add(0, "Failed_Registration");  
-				messageList.add(1, "تم التسجيل بهذا الاسم مسبقا بالفعل او اسم مشابه، اذا كنت تعتقد انك لم تسجل رجاء المحاوله خلال 48 ساعه مره اخرى");
-			}else if(ssn==voterData.getSsn()) {
-				messageList.add(0, "Failed_Registration");  
-				messageList.add(1, "  تم التسجيل بهذا الاسم والرقم الوطني مسبقا بالفعل لا يمكنك التسجيل مره اخرى اذا كنت تعتقد انك تلقيت هذه الرساله عن طريق الخطا الرجاء المحاوله مره اخرى بعد 24 ساعه ");
-				}
-				
-//			else {
-//				messageList.add(0, "Need_To_Be_Registered"); 
-//			}
-
-
+		
+		if(isItCandidate!= null && isItCandidate.length>0 && isItCandidate[0]) {
+			//Candidate
+			messageList = checkCandidateRegistration(fullName, governorateId, constituencyId,  ssn, isItCandidate);
+		}else {
+			//Voter
+			messageList =  checkVoterRegistration(fullName, governorateId, constituencyId,  ssn);
 		}
 		
 		
+
 		return messageList;
 	}
 	
 	
+
+	private List<String> checkVoterRegistration(String fullName, Long governorateId, Long constituencyId, Long ssn) {
+
+
+		//----------------------------check first if the ssn already registered without checking the name -------------------------------------------------STARTS		
+				Optional<VoterData> votrData = voterService.findBySsn(ssn);
+				VoterData voterData = votrData.orElse(null);
+				List<String> messageList = new ArrayList<String>();
+				boolean ssnFound = false;
+				if(voterData !=null && voterData.getId()!=null) {
+					Date CreatedTs = voterData.getGenericDateAndTimeData().getCreatedTs();
+					Date _2DaysBefore = getPreviousDate();
+		 
+						ssnFound = true;
+						messageList.add(0, "Failed_Registration");  
+						messageList.add(1, "تم التسجيل بهذا الرقم الوطني مسبقا بالفعل لا يمكنك التسجيل مره اخرى");
+
+				}		
+				
+		//----------------------------check first if the ssn already registered without checking the name -------------------------------------------------ENDS		
+				
+		//----------------------------check second if the  same name already registered in the last 	_3DaysBefore-------------------------------------------------STARTS
+				if(!ssnFound) {
+					
+				
+				votrData = voterService.findFullName(fullName, governorateId, constituencyId);
+				voterData = votrData.orElse(null);
+				
+				//messageList = new ArrayList<String>();
+				if(voterData !=null && voterData.getId()!=null) {
+					Date CreatedTs = voterData.getGenericDateAndTimeData().getCreatedTs();
+					Date _2DaysBefore = getPreviousDate();
+					  
+					//			  CreatedTs  < _2DaysBefore
+					//Day1:       2024-06-08 <= 2024-06-06 		false
+					//Day2:       2024-06-08 <= 2024-06-07		false
+					//Day3:       2024-06-08 <= 2024-06-08		true
+					
+					
+					if ((CreatedTs.after(_2DaysBefore )) || (CreatedTs.compareTo(_2DaysBefore ) == 0)) { 
+
+							messageList.add(0, "Failed_Registration");  
+							messageList.add(1, "تم التسجيل بهذا الاسم مسبقا بالفعل او اسم مشابه، اذا كنت تعتقد انك لم تسجل رجاء المحاوله خلال 48 ساعه مره اخرى");					
+
+					}else if(ssn==voterData.getSsn()) {
+
+						messageList.add(0, "Failed_Registration");  
+						messageList.add(1, "  تم التسجيل بهذا الاسم والرقم الوطني مسبقا بالفعل لا يمكنك التسجيل مره اخرى اذا كنت تعتقد انك تلقيت هذه الرساله عن طريق الخطا الرجاء المحاوله مره اخرى بعد 24 ساعه ");
+
+					}
+				}
+			}		
+		//----------------------------check second if the  same name already registered in the last 	_3DaysBefore-------------------------------------------------ENDS		
+		
+		return messageList;
+	}
+
+	private List<String> checkCandidateRegistration(String fullName, Long governorateId, Long constituencyId, Long ssn,
+			boolean[] isItCandidate) {
+
+
+		//----------------------------check first if the ssn already registered without checking the name -------------------------------------------------STARTS		
+				//Optional<VoterData> votrData = voterService.findBySsn(ssn);
+				Optional<CandidateData> candidData = candidateService.findBySsn(ssn);
+				
+				//VoterData voterData = votrData.orElse(null);
+				CandidateData candidateData = candidData.orElse(null);
+				List<String> messageList = new ArrayList<String>();
+				boolean ssnFound = false;
+				if(candidateData !=null && candidateData.getId()!=null) {
+					Date CreatedTs = candidateData.getGenericDateAndTimeData().getCreatedTs();
+					Date _2DaysBefore = getPreviousDate();
+		 
+						ssnFound = true;
+						messageList.add(0, "Failed_Registration");  
+						messageList.add(1, "تم التسجيل بهذا الرقم الوطني مسبقا بالفعل لا يمكنك التسجيل مره اخرى");
+
+				}		
+				
+		//----------------------------check first if the ssn already registered without checking the name -------------------------------------------------ENDS		
+				
+		//----------------------------check second if the  same name already registered in the last 	_3DaysBefore-------------------------------------------------STARTS
+				if(!ssnFound) {
+					
+				
+				//votrData = voterService.findFullName(fullName, governorateId, constituencyId);
+				candidData = candidateService.findFullName(fullName, governorateId, constituencyId);
+				candidateData = candidData.orElse(null);
+				
+				//messageList = new ArrayList<String>();
+				if(candidateData !=null && candidateData.getId()!=null) {
+					Date CreatedTs = candidateData.getGenericDateAndTimeData().getCreatedTs();
+					Date _2DaysBefore = getPreviousDate();
+					  
+					//			  CreatedTs  < _2DaysBefore
+					//Day1:       2024-06-08 <= 2024-06-06 		false
+					//Day2:       2024-06-08 <= 2024-06-07		false
+					//Day3:       2024-06-08 <= 2024-06-08		true
+					
+					
+					if ((CreatedTs.after(_2DaysBefore )) || (CreatedTs.compareTo(_2DaysBefore ) == 0)) { 
+
+							messageList.add(0, "Failed_Registration");  
+							messageList.add(1, "تم التسجيل بهذا الاسم مسبقا بالفعل او اسم مشابه، اذا كنت تعتقد انك لم تسجل رجاء المحاوله خلال 48 ساعه مره اخرى");					
+
+					}else if(ssn==Long.parseLong(candidateData.getSsn())) {
+
+						messageList.add(0, "Failed_Registration");  
+						messageList.add(1, "  تم التسجيل بهذا الاسم والرقم الوطني مسبقا بالفعل لا يمكنك التسجيل مره اخرى اذا كنت تعتقد انك تلقيت هذه الرساله عن طريق الخطا الرجاء المحاوله مره اخرى بعد 24 ساعه ");
+
+					}
+				}
+			}		
+		//----------------------------check second if the  same name already registered in the last 	_3DaysBefore-------------------------------------------------ENDS		
+		
+		return messageList;
+	
+	}
+
 	private Date getPreviousDate() {
 
 		Calendar cal = Calendar.getInstance();
-	    cal.add(Calendar.DATE, -3);
+	    cal.add(Calendar.DATE, -2);
 	    return cal.getTime();
 		
 	}
@@ -2198,25 +2328,6 @@ public class HomeController {
 
 	private  List<String> checkIfEnteredNameAlreadyRegistedIn2020(String enteredName, 
 			Integer governorateId , Integer constituencyId) {
-		
-		
-//		if(voterData!=null && voterData.getSsn()!=null) {
-//			Optional<VoterData> vd = voterService.findBySsn(voterData.getSsn());
-//			VoterData vData =vd.orElse(null);
-//			if(vd!=null && vData.getSsn()!=null) {
-//				
-////				messageList.add("You can not register with this information as ssn already registered");
-////				messageList.add("Please try with other information");
-//				
-//				messageList.add(0, "You can not register with this information as ssn already registered");
-//				messageList.add(1, "Please try with other information");
-//				
-////				System.out.println("The name you entered is not registered in 2023, please register your name at Independent Election Commission before you register in this application");
-//				
-//
-//				return messageList;
-//			}	
-//		}
 		
 		
 		//ArrayList<String> ammanVoterNames2020List = new ArrayList<String>();
@@ -2397,13 +2508,6 @@ public class HomeController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-//		for(String s: voterNames ) {
-			//System.out.println(s+ "  "+voterNames.indexOf(s) );
-//			if(StringUtility.isNoneEmpty(s)) {
-//				System.out.println(s.trim());				
-//			}
-//		}
 		
 		return messageList; 
 	}

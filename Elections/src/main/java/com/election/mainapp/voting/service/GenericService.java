@@ -3,6 +3,8 @@ package com.election.mainapp.voting.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.NonUniqueResultException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -60,12 +62,25 @@ public class GenericService implements GenericServiceI {
 	}
 
 	@Override
-	public UserData findUserByUsernmePassAndSsn(UserData userData) {
+	public List<UserData> findUserByUsernmePassAndSsn(UserData userData) {
 		
-		
-//		return getTemporarlyUserDataAsDBIsNotAvailable();
-		return userDao.findByUserNameAndPasswordAndSsn(userData.getUserName(), userData.getPassword(),userData.getSsn());
-		
+		List<UserData> userDataList  = null;
+		try {
+			
+//			return getTemporarlyUserDataAsDBIsNotAvailable();
+				 userDataList = userDao.findByUserNameAndPasswordAndSsn(userData.getUserName(), userData.getPassword(),userData.getSsn());
+				 return userDataList;
+			} catch (NonUniqueResultException e) {
+
+				e.printStackTrace();
+			}catch (Exception e) {
+				e.printStackTrace();
+			} 
+			
+			UserData newUserData = new UserData();
+			newUserData.setIsUniqueRequrd(true);
+			
+			return  userDataList;
 	}
 	
 	@Override

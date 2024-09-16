@@ -416,7 +416,7 @@ box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba
 				<td style="width: 35%;">
 				</td>
 				<td style="width: 500px; font-size: 25px; font-weight: bold;">   
-						วไสฮวศวส วแวัฯไ วแศัแใวไํๅ			
+						วแวไสฮวศวส วแไํวศํษ			
 
 				</td>
 				<td style="width: 10%;">
@@ -435,7 +435,8 @@ box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba
   	</div>
 	<div  class="popupBox"  style="font-size: 20px;" >
 	<p style=" padding-top: 30px; text-align: center;"> 
-					แÞฯ Þใส ศวแสำฬํแ ศไฬวอ ฿ไวฮศ ฬฯํฯก แสำฬํแ วแฯฮๆแ ศวำสฮฯวใ ศํวไวส วแวฺสใวฯ วแฮวีษ ศ฿ วแสํ รฯฮแสๅว ํัฬ์ วแไÞั <a href="/logoutPage"> สำฬํแ วแฯฮๆแ </a>
+					แÞฯ Þใส ศวแสำฬํแ ศไฬวอ ฿ไวฮศ ฬฯํฯก ๅะว วแสำฬํแ แว ํฺฯ สีๆํส แ฿ไ ํำใอ แ฿ ศวแฯฮๆแ แแสีๆํส วไส แใ สีๆส ศฺฯ แแสีๆํส ํัฬ์ สำฬํแ วแฯฮๆแ ศวำสฮฯวใ ศํวไวส วแวฺสใวฯ วแฮวีษ ศ฿ วแสํ รฯฮแสๅว ํัฬ์ วแไÞั <a href="/logoutPage"  style="font-size: 30px;"> สำฬํแ วแฯฮๆแ </a>
+					
 	</p>
 	</div>			
 

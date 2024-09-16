@@ -20,7 +20,7 @@ public interface GenericServiceI {
 	UserData findUser(UserData userData);
 	
 	
-	UserData findUserByUsernmePassAndSsn(UserData userData);
+	List<UserData> findUserByUsernmePassAndSsn(UserData userData);
 	
 	
 	UserData findById(int id);

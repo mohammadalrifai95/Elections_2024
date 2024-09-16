@@ -139,16 +139,21 @@ li a:hover:not(.active) {
 
 
 .popupBox{
+font-weight: bold;
 position:absolute;
-background-color: #F5F5F5;  
+background-color: #F5F5F5;
+margin-left: 100px;
+margin-top: 100px;
+padding-top: 100px;
+font-size:33px;  
 /* background-color: #679FAB; */
 /* top:70%; */
 /* left:50%; */
-width:350px;  /* adjust as per your needs */
-height:100px;   /* adjust as per your needs */
+width:300px;  /* adjust as per your needs */
+height:1400px;   /* adjust as per your needs */
 /* margin-left:100px;     */
  margin-right:55%;    
-margin-top:50px;   /* negative half of height above */
+/* margin-top:10px;   /* negative half of height above */ */
 flex: 0 0 200px;
 border-radius: 20px; 
 background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
@@ -175,7 +180,7 @@ box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba
     	
     </div>
 
-	<div    style="border: 3px solid #73AD21; background-color: #679FAB;  height: 100px; color: white;" dir="rtl">  
+	<div  style="border: 3px solid #73AD21; background-color: #679FAB;  height: 100px; color: white;" dir="rtl">  
 		<table>
 			<tr>
 				<td>  
@@ -183,39 +188,46 @@ box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba
 				  		<img src="<c:url value="/resources/images/jordanflagonhand.jpg" />" alt="image"   style="width: 100px; height: 90px; border-radius: 25%; "/> 
 					</a>
 				</td>
-				<td style="width: 34%"></td>  
-				<td style="width:50%; text-align: center; font-size: 25px; font-weight: bold;">             
-	 					ÔÇÔå ÊÓÌíá ÇáãÑÔÍ ÇáÈÑáãÇäí
+				<td style="width: 100px;"></td>  
+				<td style=" font-size: 40px; font-weight: bold; " align="center">             
+	 					*ÔÇÔå ÊÓÌíá ÇáãÑÔÍ ÇáÈÑáãÇäí*
 				</td>
 			</tr>
 		</table>
 	</div>
-	
-	<div style="font-size: 22px;" align="center" >     
+	<br>
+	<div style="font-size: 30px; font-weight: bold; width: 100%;" >     
   			ÇáÑÌÇÁ ãáÁ ÇáÍŞæá ÇÏäÇå ÍÊì ÊÊãßä ãä ÊÓÌíá ßãÑÔÍ ááÈÑáãÇä ÇáÇÑÏäí
   			<br>
   			ÇáÑÌÇÁ ãáÁ ÇáÍŞæá ÈÇáÊÑÊíÈ ãä ÇÚáì Çáì ÇÓİá
   	</div>
-  	
+  	<br>
 	<div style="margin-top: 1%;" align="center">
 		<div id="addCandidate">
 			<div style="border-radius: 25px;   background-position: left top;   padding: 5px;">
 			<span id="errorRegistMessage" style="color:red;">${errorRegistMessage}</span>
+<!-- 			<span id="failsRegistMessage" class="popupBox"  style="padding-top: 35px; color: red;  font-size: 20px;"></span> -->
+			<p id="ssnErrorMessage" class="popupBox" style="background-color:gray;   color: yellow;"></p>
 			
-				<div  id="failsRegistMessage"  class="popupBox" style="padding-top: 35px; color: red; font-size: 20px;">
+				<div  id="failsRegistMessage"  class="popupBox" style="color: red; ">
 				<header>ÑÓÇáÉ ÎØÃ  :</header>
 				</div>   
 				
-				<table style="margin-left:150px;">
+				<table style="margin-left:150px; font-size: 30px; font-weight: bold; width: 70%;">
+					<tr>
+						<td>
+ 							<a style="font-size:25px;" href="https://www.iec.jo/ar/%D8%AC%D8%AF%D8%A7%D9%88%D9%84-%D8%A7%D9%84%D9%86%D8%A7%D8%AE%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D9%85%D8%AD%D8%AF%D8%AB%D8%A9-%D9%84%D8%BA%D8%A7%D9%8A%D8%A9-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-20231231"  target = "_blank">áãÚÑİÉ ÏÇÆÑÊß ÇáÇäÊÎÇÈíå ÇÖÛØ Úáì åĞÇ ÇáÑÇÈØ</a>
+						</td>
+					</tr>
 					<tr>
 						<td>	
-							<table style="width: 100%">
+							<table style="width: 100%; ">
 										<tr>
 											<td dir="rtl">
 												<label class="required"></label>
 								   				<span style="direction: rtl; width: 300px;"> ÇÎÊÑ ÇáãÍÇİÙÉ
 								   				<br>								 
-													<select class="input" id="governorateDataListId" style="font-size: 20px; text-align: center; background-color: lightgray; " onchange="changeGovernorate(this.value)" >      			 
+													<select class="input" id="governorateDataListId" style=" text-align: center; background-color: lightgray; font-size: 30px; font-weight: bold; width: 80%; " onchange="changeGovernorate(this.value)" >      			 
 														    <option value="Select" name ="Select"  id="0" selected>--ÇÎÊÑ ÇáãÍÇİÙÉ:--</option>
 														    <c:forEach  items="${governorateDataList}" var="governorateData">  
 																    <c:choose>
@@ -232,15 +244,16 @@ box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba
 												
 												<br/>
 										</td>
-										<td>
-				 							<a style="font-size:25px;" href="https://www.iec.jo/ar/%D8%AC%D8%AF%D8%A7%D9%88%D9%84-%D8%A7%D9%84%D9%86%D8%A7%D8%AE%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D9%85%D8%AD%D8%AF%D8%AB%D8%A9-%D9%84%D8%BA%D8%A7%D9%8A%D8%A9-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-20231231"  target = "_blank">áãÚÑİÉ ÏÇÆÑÊß ÇáÇäÊÎÇÈíå ÇÖÛØ Úáì åĞÇ ÇáÑÇÈØ</a>
-										</td>										
-									</tr>		
+<!-- 										<td> -->
+<!-- 				 							<a style="font-size:25px;" href="https://www.iec.jo/ar/%D8%AC%D8%AF%D8%A7%D9%88%D9%84-%D8%A7%D9%84%D9%86%D8%A7%D8%AE%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D9%85%D8%AD%D8%AF%D8%AB%D8%A9-%D9%84%D8%BA%D8%A7%D9%8A%D8%A9-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-20231231"  target = "_blank">áãÚÑİÉ ÏÇÆÑÊß ÇáÇäÊÎÇÈíå ÇÖÛØ Úáì åĞÇ ÇáÑÇÈØ</a> -->
+<!-- 										</td>										 -->
+									</tr>	
+									<br>	
 									<tr>
-										<td dir="rtl"> 
+										<td dir="rtl" > 
 											<label class="required"></label>
 											<span>ÇÎÊÑ ÇáÏÇÆÑÉ ÇáÇäÊÎÇÈíÉ<br />
-												<select class="input" id="constituencyDataListId" style="font-size: 20px; text-align: center; background-color: lightgray;" onchange="changeConstituency(this.value)" >      			 
+												<select class="input" id="constituencyDataListId" style="font-size: 30px; font-weight: bold; width: 80%; text-align: center; background-color: lightgray;" onchange="changeConstituency(this.value)" >      			 
 													    <option value="Select" name ="Select"  id="0">-- : ÇÎÊÑ ÇáÏÇÆÑÉ ÇáÇäÊÎÇÈíÉ --</option> 
 													    <c:forEach  items="${constituencyDataList}" var="constituencyData">   
 													        <option value="${constituencyData.id}"  name="${constituencyData.id}" id= "${constituencyData.id}">${constituencyData.arabicName}</option>    
@@ -254,7 +267,7 @@ box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba
 									 <tr >
 									 	<td dir="rtl"><label class="required">
 									 		</label> ÇÓã ÇáãÓÊÎÏã<br /> 
-									 		<input type="text" placeholder="ÇÓã ÇáãÓÊÎÏã" id="userName" name="userName" value=""  class="input" disabled="block" />
+									 		<input type="text" style="font-size: 30px; font-weight: bold; width: 80%;" placeholder="ÇÓã ÇáãÓÊÎÏã" id="userName" name="userName" value=""  class="input" disabled="block" />
 									 	</td>
 									 </tr>
 	 							 	 <tr >  
@@ -262,35 +275,53 @@ box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba
 									 	<label class="required">
 									 	
 									 	</label> ßáãÉ ÇáãÑæÑ<br />
-									 	<input type="password" placeholder="ßáãÉ ÇáãÑæÑ" id="password"  name="password" value="" class="input" disabled="block"/></td>	
+									 	<input type="password" style="font-size: 30px; font-weight: bold; width: 80%;" placeholder="ßáãÉ ÇáãÑæÑ" id="password"  name="password" value="" class="input" disabled="block"/></td>	
 									 </tr>	  
 									 <tr >
 									 	<td dir="rtl">
 									 	<label class="required">
 									 	</label> ÃÏÎá ÇÓãß ÇáßÇãá ßãÇ íÙåÑ İí åæíÊß ÇáÃÑÏäíÉ<br /> 
-									 	<input type="text" id="fullName" name="fullName" placeholder=" ÃÏÎá ÇÓãß ÇáßÇãá ßãÇ íÙåÑ İí åæíÊß ÇáÃÑÏäíÉ" value=""  class="input" disabled="block"/></td>
+									 	<input type="text" style="font-size: 30px; font-weight: bold; width: 80%;" id="fullName" name="fullName" placeholder=" ÃÏÎá ÇÓãß ÇáßÇãá ßãÇ íÙåÑ İí åæíÊß ÇáÃÑÏäíÉ" value=""  class="input" disabled="block"/></td>
 									 </tr>	 
 									 <tr>
 										<td dir="rtl">
 									 	<label class="required">
-									 	</label> ÃÏÎá ÑŞãß ÇáæØäí ßãÇ åæ ãæÌæÏ İí ÈØÇŞÊß ÇáÃÑÏäíÉ<br /><input type="number" placeholder="ÇáÑÌÇÁ ÇÏÎÇá ÇÑŞÇã İŞØ" id="ssn" name="ssn" maxlength="10" value=""  class="input" style="margin-left: 1%;" disabled="block"/></td>
+										<!--maxlength="10" -->
+									 	</label> ÃÏÎá ÑŞãß ÇáæØäí ßãÇ åæ ãæÌæÏ İí ÈØÇŞÊß ÇáÃÑÏäíÉ<br /><input type="number" style="font-size: 30px; font-weight: bold; width: 80%;" placeholder="ÇáÑÌÇÁ ÇÏÎÇá ÇÑŞÇã İŞØ" id="ssn" name="ssn"  value=""  class="input" style="margin-left: 1%;" disabled="block"/></td>
+									 	
 									</tr>
 									 <tr>
 										<td dir="rtl">
 									 	<label class="required">
-									 	</label> Şã ÈÊÃßíÏ ÑŞãß ÇáæØäí<br /><input type="number" placeholder="ÇáÑÌÇÁ ÇÏÎÇá ÇÑŞÇã İŞØ" id="ssnConfirmation"  maxlength="10"  name="ssnConfirmation"  value=""  class="input" style="margin-left: 1%;" disabled="block"/></td>
-									</tr>																 
+										<!-- maxlength="10"-->
+									 	</label> Şã ÈÊÃßíÏ ÑŞãß ÇáæØäí<br /><input type="number" style="font-size: 30px; font-weight: bold; width: 80%;" placeholder="ÇáÑÌÇÁ ÇÏÎÇá ÇÑŞÇã İŞØ" id="ssnConfirmation"  name="ssnConfirmation"  value=""  class="input" style="margin-left: 1%;" disabled="block"/></td>
+									</tr>
+									<tr style="height: 30px;">						
+									</tr>
+									<tr >
+									 	<td>
+									 	<label>
+									 	 	ÇÑÌæ ÇáÇÍÊİÇÙ ÈÇÓã ÇáãÓÊÎÏã æßáãå ÇáãÑæÑ ÇáÊí Óæİ ÊÏÎáåÇ åäÇ İí ÇáÇÓİá áÇäß Óæİ ÊÍÊÇÌåÇ ÚäÏ ÊÓÌíá ÏÎæá Çæ ÚäÏ ÇáÊÕæíÊ
+									 	 </label> 
+									 	</td>
+									 </tr>
+									 														 
 									 <tr>
 									 	<td dir="rtl">
 									 	<label class="required">
-									 	</label>  ÑŞã åÇÊİß <br /><input type="number" placeholder="ÇáÑÌÇÁ ÇÏÎÇá ÇÑŞÇã İŞØ" id="mobile" name="mobile" value=""  class="input" disabled="block"/></td>
+									 	</label>  ÑŞã åÇÊİß <br /><input type="number" style="font-size: 30px; font-weight: bold; width: 80%;" placeholder="ÇáÑÌÇÁ ÇÏÎÇá ÇÑŞÇã İŞØ" id="mobile" name="mobile" value=""  class="input" disabled="block"/></td>
 									 </tr>
 									 <tr>
-									 	<td dir="rtl"> ÈÑíÏß ÇáÇáßÊÑæäí<br /><input type="text" id="email" placeholder="ÈÑíÏß ÇáÇáßÊÑæäí"  name="email"  value="" class="input" disabled="block" title="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"/></td>
+									 	<td dir="rtl">ÈÑíÏß ÇáÇáßÊÑæäí (ÇÎÊíÇÑí)<br /><input type="text" style="font-size: 30px; font-weight: bold; width: 80%;" id="email" placeholder="ÈÑíÏß ÇáÇáßÊÑæäí"  name="email"  value="" class="input" disabled="block" title="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"/></td>
 									 </tr>
+									 
+									 <tr>
+									 		<tr style="height: 30px;">						
+									</tr>
+									
 									<tr style="height: 80px;">
 										<td dir="rtl">
-											<input class="styled"  type="submit" value="ÊÓÌíá" style="background-color: black; color: white; text-decoration: underline; cursor: pointer;"  onclick="addCandidateFunc(1)" id="addCandidateFunc"/> 
+											<input class="styled"  style="font-size: 30px; font-weight: bold; width: 80%;" type="submit" value="ÊÓÌíá" style="background-color: black; color: white; text-decoration: underline; cursor: pointer;"  onclick="addCandidateFunc(1)" id="addCandidateFunc"/> 
 										</td>
 									</tr>
 							  </table>														
@@ -301,7 +332,9 @@ box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba
 		</div>
 	</div>
 
-    
+    <c:forEach begin="0" end="50" varStatus="loop">
+<br class="verticalSpace">
+</c:forEach>
  </div>
 </body>
 
@@ -311,11 +344,12 @@ box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba
 
 window.onload = function() {
 
-// 	alert("window.onload"); 
+// 	alert("window.onload");
+	alert("ãÑÍÈÇ Èß İí ãæŞÚ ãÔÑæÚ ÇáÇäÊÎÇÈÇÊ ÇáÇÑÏäíå ÇáÈÑáãÇäíå áŞÏ æÕáÊ Çáì ÔÇÔå ÊÓÌíá ÇáãÑÔÍ ÇáÇÑÏäí ÇáÑÌÇÁ ÇĞÇ æÕáÊ Çáì åĞå ÇáÔÇÔå Úä ØÑíŞ ÇáÎØÇ İÇáÎÑæÌ ãäåÇ ÇĞÇ ÊÚÊŞÏ Çäß ÊÑíÏ ÇáÊÑÔÍ áãÌáÓ ÇáÈÑáãÇäíå ÇáÇÑÏäí 2024 íãßäß ÇáÈŞÇÁ İí åĞå ÇáÕİÍå æÇÏÎÇá ãÚáæãÇÊß ßãÇ İí Çáåæíå ÇáÇÑÏäíå ÇáÑÌÇÁ ÇÎÊíÇÑ ÇáÏÇÆÑå ÇáÇäÊÎÇÈíå ÇáÕÍíÍå Óæİ íŞæã åĞÇ ÇáãæŞÚ ÈÍİÙ ãÚáæãÇÊß ÇáãÏÎáå áÇÚÇÏå ÇÓÊÎÏÇãåÇ áãÓÇÚÏÊß İí ÇÚÇÏå ÇÓÊÎÏÇãåÇ ÚäÏ ÇáÏÎæá æÇáÎÑæÌ İí æãä åĞÇ ÇáãæŞÚ ÚäÏ ÖÛØß Úáì ÒÑ Çæßí   Çæ ok İí ÇáÇÓİá İÇäß ÊŞÈá ÈãÔÇÑßÊß ÇáÈíÇäÇÊ ÇáãÏÎáå ãÚ åĞÇ ÇáãæŞÚ åĞÇ ÇáãæŞÚ Óæİ íÓÊÎÏã åĞå ÇáãÚáæãÇÊ İŞØ áãÓÇÚÏÊß ÈÇäÔÇÁ ÕİÍå ÔÎÕíå íãßä áÇí ãæÇØä ÇÑÏäí ÑÄíÊåÇ æÇáÊÕæíÊ áß");
 	$("#addCandidate").show();
 	$("#candidateDataListTable").show();
 	$("#failsRegistMessage").hide();   
-	
+	$('#ssnErrorMessage').hide();
 	
 	var  cityLable = '${CityLable}' ;// CityLable from modelandview object 
 	var  selectedGovernorate = '${selectedGovernorate}' ;
@@ -405,6 +439,63 @@ function addCandidateFunc(param){
 	
     document.getElementById('load').style.visibility="visible";
     document.getElementById('contents').style.visibility="visible";
+    
+    
+    
+	if (fullName != null && fullName != '' && governorateId !='Select' && constituencyId !='Select' 
+		&& ssn != null && ssn != '' && ssnConfirmation != null && ssnConfirmation != '' 
+		//|| mobile = null || mobile == ''
+		&& userName != null && userName != ''
+			&& password != null && password != '' 
+		//|| ssnStr!=ssnConfirmation
+		) {
+		
+
+if( (isNaN(ssn) && ssn !='') || (ssn<1000000000) || (ssn>9999999999)  ){
+	var ssnEnteredWasBigOrSmall = false;
+// 	alert(ssn<1000000000) || (ssn>9999999999)  );
+	if( (ssn<1000000000) || (ssn>9999999999)  ){
+		//if ssn  was entered big or small then do not show that the issue is only in ssn
+		ssnEnteredWasBigOrSmall = true;
+	}
+	
+	ssnAndconfirmationAreSame = false;
+ 	//if ssn  was entered big or small then do not show that the issue is only in ssn
+ 	if(!ssnEnteredWasBigOrSmall){
+ 	document.getElementById("ssn").style.border= "5px solid"; 
+ 	document.getElementById("ssn").style.borderColor = "yellow";
+ 	document.getElementById("ssnConfirmation").style.border= "5px solid";
+ 	document.getElementById("ssnConfirmation").style.borderColor = "yellow";	 		
+ 	}
+	
+	$('#ssnErrorMessage').hide();
+//  	$("#ssnErrorMessage").html("áã íÊã ÇáÚËæÑ Úáì Çí ÈíÇäÇÊ ÈÇáãÚáæãÇÊ ÇáãÏÎáå¡ ÇáÑÌÇÁ ÇáÊÇßÏ ãä Çä ÇáÇÓã ÇáßÇãá æÇáÑŞã ÇáæØäí ÊãÇãÇ ßãÇ İí Çáåæíå ÇáÔÎÕíå¡ ÇáÑŞã ÇáæØäí ÇáÇÑÏäí íÌÈ Çä íßæä ÇÑŞÇã İŞØ¡ ÇáÑÌÇÁ ÇáÊÇßÏ ÇíÖÇ ãä ÇáÏÇÆÑå ÇáÇäÊÎÇÈíå ÇáÕÍíÍå."); 
+	$("#ssnErrorMessage").html("áã íÊã ÇáÚËæÑ Úáì ÈíÇäÇÊ ÈÇáãÚáæãÇÊ ÇáãÏÎáå ÇáÑÌÇÁ ÇáÊÇßÏ ããÇ íáí<br><br>1. ÇáÇÓã ÇáãÏÎá ÊãÇãÇ ßãÇ İí Çáåæíå ÇáÔÎÕíå<br><br>2. ÇáÑŞã ÇáæØäí ÊãÇãÇ ßãÇ İí Çáåæíå ÇáÔÎÕíå<br><br>3. ÇáÑŞã ÇáæØäí íÌÈ Çä íßæä ÇÑŞÇã İŞØ<br><br>4. ÇáÑŞã ÇáæØäí íÌÈ Çä íßæä ÈÇááÛå ÇáÇäÌáíÒíå<br><br>5. ÊÇßÏ ãä ÇáÏÇÆÑå ÇáÇäÊÎÇÈíå ÇáÕÍíÍå"); 
+	alert("áã íÊã ÇáÚËæÑ Úáì ÈíÇäÇÊ ÈÇáãÚáæãÇÊ ÇáãÏÎáå ÇáÑÌÇÁ ÇáÊÇßÏ ããÇ íáí\n1. ÇáÇÓã ÇáãÏÎá ÊãÇãÇ ßãÇ İí Çáåæíå ÇáÔÎÕíå\n2. ÇáÑŞã ÇáæØäí ÊãÇãÇ ßãÇ İí Çáåæíå ÇáÔÎÕíå\n3. ÇáÑŞã ÇáæØäí íÌÈ Çä íßæä ÇÑŞÇã İŞØ\n4. ÇáÑŞã ÇáæØäí íÌÈ Çä íßæä ÈÇááÛå ÇáÇäÌáíÒíå\n5. ÊÇßÏ ãä ÇáÏÇÆÑå ÇáÇäÊÎÇÈíå ÇáÕÍíÍå"); 
+	$('#ssnErrorMessage').show();
+	
+	setTimeout(function() {
+	 	document.getElementById("ssn").style.border= "5px solid"; 
+	 	document.getElementById("ssn").style.borderColor = "red";
+	 	document.getElementById("ssnConfirmation").style.border= "1px solid"; 
+	 	document.getElementById("ssnConfirmation").style.borderColor = "black";
+		$('#ssnErrorMessage').hide();
+		
+	}, 20000);
+	
+	setTimeout(function() {
+		document.getElementById('load').style.visibility="hidden";
+		document.getElementById('contents').style.visibility="hidden";
+	}, 1000); 
+	
+	return ;
+}
+
+}
+    
+    
+    
+    
 // 	var imageStr= document.getElementById('src').value;
 // 	var formData= document.getElementById('src').value;
 
@@ -549,6 +640,7 @@ function addCandidateFunc(param){
 		
 			//$("#failsRegistMessage").html("Please fill all below required fields in order to add new candidate");
 			$("#failsRegistMessage").html("*  Êã ÊÚííä ÇáÍŞæá ÈÇááæä ÇáÇÍãÑ  íÑÌì ãáÁ ÌãíÚ ÇáÍŞæá  ÇáãØáæÈÉ ÈÇáÊÑÊíÈ ãä ÇÚáì Çáì ÇÓİá  ÈŞíã ÕÍíÍå æíÑÌì Çä áÇ Êßæä İÇÑÛå .");
+			alert("*  Óæİ íÊã ÊÚííä ÇáÍŞæá ÈÇááæä ÇáÇÍãÑ  íÑÌì ãáÁ ÌãíÚ ÇáÍŞæá  ÇáãØáæÈÉ ÈÇáÊÑÊíÈ ãä ÇÚáì Çáì ÇÓİá  ÈŞíã ÕÍíÍå æíÑÌì Çä áÇ Êßæä İÇÑÛå .");
 			$('#failsRegistMessage').show();
 			setTimeout(function() {
 				$('#failsRegistMessage').hide();
@@ -587,27 +679,42 @@ function addCandidateFunc(param){
 				contentType : "application/json",
 
 				success : function(messageList) {
-					
+// 					alert("Success");
 			         document.getElementById('load').style.visibility="hidden";
 			         document.getElementById('contents').style.visibility="hidden";
 
-						setTimeout(function() {
-							alert("Registration Check Started");
-						}, 2000); 
+// 						setTimeout(function() {
+// 							alert("Registration Check Started");
+// 						}, 2000); 
 					
 					if (messageList[0] == "Failed_Registration") {
+// 						alert("If");
+						alert(messageList[1]);
 						$('#errorLoginMessage').hide();
+						$('#errorRegistMessage').show(); 
 						$('#errorRegistMessage').html(messageList[1]);
 						$('#loginDiv').hide();
 						$('#registDiv').show();
 						
-						if(messageList[1]!="The name you entered is not registered in 2023, please register your name at Independent Election Commission before you register in this application"){
+						//if(messageList[1]!="The name you entered is not registered in 2023, please register your name at Independent Election Commission before you register in this application"){
+
+					if(
+							messageList[1]!="ÇáÑÌÇÁ ÇáÊÇßÏ ãä Çä ÇáÇÓã æÇáÑŞã ÇáæØäí ÇáãÏÎáíä íÊØÇÈŞÇä ãÚ åæíÊß ÇáÔÎÕíå Çæ ÊÇßÏ ãä ãäØŞÊß ÇáÇäÊÎÇÈíå ÇáÕÍíÍå"
+						&& 
+						messageList[1]!="Êã ÇáÊÓÌíá ÈåĞÇ ÇáÇÓã ãÓÈŞÇ ÈÇáİÚá Çæ ÇÓã ãÔÇÈå¡ ÇĞÇ ßäÊ ÊÚÊŞÏ Çäß áã ÊÓÌá ÑÌÇÁ ÇáãÍÇæáå ÎáÇá 48 ÓÇÚå ãÑå ÇÎÑì"
+							&&
+							messageList[1]!="Êã ÇáÊÓÌíá ÈåĞÇ ÇáÑŞã ÇáæØäí ãÓÈŞÇ ÈÇáİÚá áÇ íãßäß ÇáÊÓÌíá ãÑå ÇÎÑì"
+						){
+						
+// 						alert("will direct to voterRegisterWithCredential");
+					
 							window.location.href = "voterRegisterWithCredential";	
 						}
 						
 						
 						
 					} else {
+// 						alert("else");
 				         
 						$('#errorRegistMessage').html("áŞÏ ŞãÊ ÈÊÓÌíá ÍÓÇÈ ßãÑÔÍ äíÇÈí ÇÑÏäí ÈäÌÇÍ íÑÌì ÇáÏÎæá áÊÊãßä ãä ÊÊÈÚ ÚÏÏ ÇáÇÕæÇÊ");
 						$('#candidateDataListTable').hide();
@@ -707,7 +814,7 @@ document.getElementById('ssn').removeAttribute("disabled");
 document.getElementById('mobile').removeAttribute("disabled");
 document.getElementById('ssnConfirmation').removeAttribute("disabled"); 
 document.getElementById('email').removeAttribute("disabled");
-document.getElementById('src').removeAttribute("disabled"); 
+// document.getElementById('src').removeAttribute("disabled"); 
 
 }
 
